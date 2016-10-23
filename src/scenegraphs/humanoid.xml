@@ -206,7 +206,7 @@
                                                     </object>
                                                 </transform>
                                             </transform>
-                                            <transform>
+                                            <transform name="rightelbow">
                                                 <set>
                                                     <translate>0 -11 0</translate>
                                                 </set>
@@ -221,7 +221,7 @@
                                                     </object>
                                                 </transform>
                                             </transform>
-                                            <transform>
+                                            <transform name="rightforearm">
                                                 <set>
                                                     <translate>0 -12 0</translate>
                                                 </set>

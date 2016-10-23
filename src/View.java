@@ -130,7 +130,7 @@ public class View
         scenegraph.draw(modelView);
         scenegraph.animate(time);
 
-        time = time + 10; // = (time + 10) % 360;
+        time = time + 1; // = (time + 10) % 360;
 //        bodyTime++;
     /*
      *OpenGL batch-processes all its OpenGL commands.
