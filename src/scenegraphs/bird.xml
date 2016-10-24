@@ -1,0 +1,346 @@
+<scene>
+    <instance name="eye" path="models/sphere"></instance>
+    <instance name="feather" path="models/feather"></instance>
+    <instance name="tailFeather" path="models/tailFeather"></instance>
+    <instance name="body" path="models/body"></instance>
+    <instance name="head" path="models/head"></instance>
+    <instance name="beak" path="models/beak"></instance>
+    <instance name="leg" path="models/leg"></instance>
+    <instance name="toe" path="models/toe"></instance>
+    <instance name="humerus" path="models/humerus"></instance>
+    <instance name="ulna" path="models/ulna"></instance>
+    <instance name="hand" path="models/hand"></instance>
+    <instance name="ulnaJoint" path="models/ulnajoint"></instance>
+    <instance name="handJoint" path="models/handjoint"></instance>
+
+    <transform name="bird">
+        <set>
+            <scale>50 50 50</scale>
+        </set>
+        <group name="unit-height-bird">
+            <transform>
+                <set>
+                    <scale>0.0125 0.0125 0.0125</scale>
+                </set>
+                <group>
+                    <!--<group name="birdHead">
+                        <transform name="birdHeadTrans">
+                            <set>
+                                <translate>0 0 0</translate>
+                            </set>
+                            <group name="head">
+                                <transform name="headTrans">
+                                    <set>
+                                        <scale>20 20 20</scale>
+                                    </set>
+                                    <object instanceof="head">
+                                        <material>
+                                            <color>1 1 1</color>
+                                        </material>
+                                    </object>
+                                </transform>
+                                <transform>
+                                    <set>
+                                        <translate>-10 10 8</translate>
+                                    </set>
+                                    <transform name="leftEye">
+                                        <set>
+                                            <scale>3 3 3</scale>
+                                        </set>
+                                        <object instanceof="eye">
+                                            <material>
+                                                <color>0.2 0.2 0.2</color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </transform>
+                                <transform>
+                                    <set>
+                                        <translate>10 10 8</translate>
+                                    </set>
+                                    <transform name="rightEye">
+                                        <set>
+                                            <scale>3 3 3</scale>
+                                        </set>
+                                        <object instanceof="eye">
+                                            <material>
+                                                <color>0.2 0.2 0.2</color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </transform>
+                                <transform>
+                                    <set>
+                                        <translate>0 0 25</translate>
+                                    </set>
+                                    <transform name="beak">
+                                        <set>
+                                            <scale>20 20 20</scale>
+                                        </set>
+                                        <object instanceof="beak">
+                                            <material>
+                                                <color>1 0.5 0</color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </transform>
+                                <transform>
+                                    <set>
+                                        <translate>-8 8 -20</translate>
+                                        <rotate>-15 1 0 0</rotate>
+                                        <rotate>40 0 1 0</rotate>
+                                    </set>
+                                    <transform name="crest1">
+                                        <set>
+                                            <scale>20 20 20</scale>
+                                        </set>
+                                        <object instanceof="feather">
+                                            <material>
+                                                <color>1 1 1</color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </transform>
+                                <transform>
+                                    <set>
+                                        <translate>0 8 -20</translate>
+                                        <rotate>-15 1 0 0</rotate>
+                                    </set>
+                                    <transform name="crest2">
+                                        <set>
+                                            <scale>20 20 20</scale>
+                                        </set>
+                                        <object instanceof="feather">
+                                            <material>
+                                                <color>1 1 1</color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </transform>
+                                <transform>
+                                    <set>
+                                        <translate>8 8 -20</translate>
+                                        <rotate>-15 1 0 0</rotate>
+                                        <rotate>-40 0 1 0</rotate>
+                                    </set>
+                                    <transform name="crest3">
+                                        <set>
+                                            <scale>20 20 20</scale>
+                                        </set>
+                                        <object instanceof="feather">
+                                            <material>
+                                                <color>1 1 1</color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </transform>
+                            </group>
+                        </transform>
+                    </group> -->
+                    <group name="birdBody">
+                        <transform>
+                            <set>
+                                <translate>0 0 0</translate>
+                            </set>
+                            <group name="body">
+                                <transform name="torso">
+                                    <set>
+                                        <translate>0 0 0</translate>
+                                        <rotate>0 0 0 1</rotate>
+                                        <scale>25 20 20</scale>
+                                    </set>
+                                    <object instanceof="body">
+                                        <material>
+                                            <color>1 1 1</color>
+                                        </material>
+                                    </object>
+                                </transform>
+                                <transform name="feather1">
+                                    <set>
+                                        <translate>-30 0 -50</translate>
+                                        <rotate>30 0 1 0</rotate>
+                                        <scale>20 20 20</scale>
+                                    </set>
+                                    <object instanceof="tailFeather">
+                                        <material>
+                                            <color>1 1 1</color>
+                                        </material>
+                                    </object>
+                                </transform>
+                                <transform name="feather2">
+                                    <set>
+                                        <translate>0 0 -50</translate>
+                                        <rotate>0 0 0 1</rotate>
+                                        <scale>20 20 20</scale>
+                                    </set>
+                                    <object instanceof="tailFeather">
+                                        <material>
+                                            <color>1 1 1</color>
+                                        </material>
+                                    </object>
+                                </transform>
+                                <transform name="feather3">
+                                    <set>
+                                        <translate>30 0 -50</translate>
+                                        <rotate>-30 0 1 0</rotate>
+                                        <scale>20 20 20</scale>
+                                    </set>
+                                    <object instanceof="tailFeather">
+                                        <material>
+                                            <color>1 1 1</color>
+                                        </material>
+                                    </object>
+                                </transform>
+                                <transform name="leftLeg">
+                                    <set>
+                                        <translate>-12 -30 0</translate>
+                                    </set>
+                                    <group name="leg">
+                                        <transform name="upperLeg">
+                                            <set>
+                                                <translate>0 0 0</translate>
+                                                <scale>20 20 20</scale>
+                                            </set>
+                                            <object instanceof="leg">
+                                                <material>
+                                                    <color>1 1 0</color>
+                                                </material>
+                                            </object>
+                                        </transform>
+                                        <transform name="leftToe">
+                                            <set>
+                                                <translate>-5 -8 10</translate>
+                                                <rotate>-25 0 1 0</rotate>
+                                                <scale>20 20 20</scale>
+                                            </set>
+                                            <object instanceof="toe">
+                                                <material>
+                                                    <color>1 1 0</color>
+                                                </material>
+                                            </object>
+                                        </transform>
+                                        <transform name="middleToe">
+                                            <set>
+                                                <translate>0 -8 10</translate>
+                                                <rotate>0 0 1 0</rotate>
+                                                <scale>20 20 20</scale>
+                                            </set>
+                                            <object instanceof="toe">
+                                                <material>
+                                                    <color>1 1 0</color>
+                                                </material>
+                                            </object>
+                                        </transform>
+                                        <transform name="rightToe">
+                                            <set>
+                                                <translate>5 -8 10</translate>
+                                                <rotate>25 0 1 0</rotate>
+                                                <scale>20 20 20</scale>
+                                            </set>
+                                            <object instanceof="toe">
+                                                <material>
+                                                    <color>1 1 0</color>
+                                                </material>
+                                            </object>
+                                        </transform>
+                                    </group>
+                                </transform>
+                                <transform name="rightLeg">
+                                    <set>
+                                        <translate>12 -30 0</translate>
+                                    </set>
+                                    <group copyof="leg">
+                                    </group>
+                                </transform>
+                            <transform name="rightwing">
+                                <set>
+                                    <translate>-20 5 0</translate>
+                                </set>
+                                <transform name="wing">
+                                    <transform name="humerusjoint">
+                                        <set>
+                                            <rotate>0 0 0 1</rotate>
+                                            <scale>20 20 20</scale>
+                                        </set>
+                                        <object instanceof="handJoint">
+                                            <material>
+                                                <color>1 1 0</color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                    <transform name="humerus">
+                                        <set>
+                                            <translate>-20 0 0</translate>
+                                            <rotate>0 0 0 1</rotate>
+                                            <scale>20 20 20</scale>
+                                        </set>
+                                        <object instanceof="humerus">
+                                            <material>
+                                                <color>0 0 1</color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                    <transform name="ulnajoint">
+                                        <set>
+                                            <translate>-40 0 0</translate>
+                                            <rotate>0 0 0 1</rotate>
+                                            <scale>20 20 20</scale>
+                                        </set>
+                                        <object instanceof="ulnaJoint">
+                                            <material>
+                                                <color>1 1 0</color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                    <transform name="ulna">
+                                        <set>
+                                            <translate>-60 0 0</translate>
+                                            <rotate>0 0 0 1</rotate>
+                                            <scale>20 20 20</scale>
+                                        </set>
+                                        <object instanceof="ulna">
+                                            <material>
+                                                <color>0 1 0</color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                    <transform name="handjoint">
+                                        <set>
+                                            <translate>-80 0 0</translate>
+                                            <rotate>0 0 0 1</rotate>
+                                            <scale>20 20 20</scale>
+                                        </set>
+                                        <object instanceof="handJoint">
+                                            <material>
+                                                <color>1 1 0</color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                    <transform name="hand">
+                                        <set>
+                                            <translate>-95 0 0</translate>
+                                            <rotate>0 0 0 1</rotate>
+                                            <scale>20 20 20</scale>
+                                        </set>
+                                        <object instanceof="hand">
+                                            <material>
+                                                <color>1 0 0</color>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </transform>
+                                <transform name="rightwing">
+                                    <set>
+                                        <translate>20 5 0</translate>
+                                        <rotate>180 0 1 0</rotate>
+                                    </set>
+                                    <group copyof="wing"></group>
+                                </transform>
+                            </transform>
+                        </transform>
+                    </group>
+                </group>
+            </transform>
+        </group>
+    </transform>
+</scene>
