@@ -23,10 +23,10 @@
                     <scale>0.0125 0.0125 0.0125</scale>
                 </set>
                 <group>
-                    <!--<group name="birdHead">
+                    <group name="birdHead">
                         <transform name="birdHeadTrans">
                             <set>
-                                <translate>0 0 0</translate>
+                                <translate>0 35 40</translate>
                             </set>
                             <group name="head">
                                 <transform name="headTrans">
@@ -136,7 +136,7 @@
                                 </transform>
                             </group>
                         </transform>
-                    </group> -->
+                    </group>
                     <group name="birdBody">
                         <transform>
                             <set>
@@ -252,91 +252,197 @@
                                     <group copyof="leg">
                                     </group>
                                 </transform>
-                            <transform name="rightwing">
-                                <set>
-                                    <translate>-20 5 0</translate>
-                                </set>
-                                <transform name="wing">
-                                    <transform name="humerusjoint">
+                                <transform name="leftwing">
+                                    <set>
+                                        <translate>-20 5 0</translate>
+                                    </set>
+                                    <transform name="leftwing">
                                         <set>
-                                            <rotate>0 0 0 1</rotate>
-                                            <scale>20 20 20</scale>
+                                            <rotate>80 0 0 1</rotate>
                                         </set>
-                                        <object instanceof="handJoint">
-                                            <material>
-                                                <color>1 1 0</color>
-                                            </material>
-                                        </object>
-                                    </transform>
-                                    <transform name="humerus">
-                                        <set>
-                                            <translate>-20 0 0</translate>
-                                            <rotate>0 0 0 1</rotate>
-                                            <scale>20 20 20</scale>
-                                        </set>
-                                        <object instanceof="humerus">
-                                            <material>
-                                                <color>0 0 1</color>
-                                            </material>
-                                        </object>
-                                    </transform>
-                                    <transform name="ulnajoint">
-                                        <set>
-                                            <translate>-40 0 0</translate>
-                                            <rotate>0 0 0 1</rotate>
-                                            <scale>20 20 20</scale>
-                                        </set>
-                                        <object instanceof="ulnaJoint">
-                                            <material>
-                                                <color>1 1 0</color>
-                                            </material>
-                                        </object>
-                                    </transform>
-                                    <transform name="ulna">
-                                        <set>
-                                            <translate>-60 0 0</translate>
-                                            <rotate>0 0 0 1</rotate>
-                                            <scale>20 20 20</scale>
-                                        </set>
-                                        <object instanceof="ulna">
-                                            <material>
-                                                <color>0 1 0</color>
-                                            </material>
-                                        </object>
-                                    </transform>
-                                    <transform name="handjoint">
-                                        <set>
-                                            <translate>-80 0 0</translate>
-                                            <rotate>0 0 0 1</rotate>
-                                            <scale>20 20 20</scale>
-                                        </set>
-                                        <object instanceof="handJoint">
-                                            <material>
-                                                <color>1 1 0</color>
-                                            </material>
-                                        </object>
-                                    </transform>
-                                    <transform name="hand">
-                                        <set>
-                                            <translate>-95 0 0</translate>
-                                            <rotate>0 0 0 1</rotate>
-                                            <scale>20 20 20</scale>
-                                        </set>
-                                        <object instanceof="hand">
-                                            <material>
-                                                <color>1 0 0</color>
-                                            </material>
-                                        </object>
+                                        <group name="lwing">
+                                            <transform name="lhumerusjoint">
+                                                <set>
+                                                    <scale>20 20 20</scale>
+                                                </set>
+                                                <object instanceof="handJoint">
+                                                    <material>
+                                                        <color>1 1 1</color>
+                                                    </material>
+                                                </object>
+                                            </transform>
+                                            <transform name="lhumerus">
+                                                <set>
+                                                    <translate>-20 0 0</translate>
+                                                    <rotate>0 0 0 1</rotate>
+                                                    <scale>20 20 20</scale>
+                                                </set>
+                                                <object instanceof="humerus">
+                                                    <material>
+                                                        <color>1 1 1</color>
+                                                    </material>
+                                                </object>
+                                            </transform>
+                                            <transform name="leftlowerarm">
+                                                <set>
+                                                    <translate>-40 0 0</translate>
+                                                </set>
+                                                <transform name="leftlowerarm">
+                                                    <set>
+                                                    </set>
+                                                    <group>
+                                                        <transform name="lulnajoint">
+                                                            <set>
+                                                                <scale>20 20 20</scale>
+                                                            </set>
+                                                            <object instanceof="ulnaJoint">
+                                                                <material>
+                                                                    <color>1 1 1</color>
+                                                                </material>
+                                                            </object>
+                                                        </transform>
+                                                        <transform name="lulna">
+                                                            <set>
+                                                                <translate>-20 0 0</translate>
+                                                                <scale>20 20 20</scale>
+                                                            </set>
+                                                            <object instanceof="ulna">
+                                                                <material>
+                                                                    <color>1 1 1</color>
+                                                                </material>
+                                                            </object>
+                                                        </transform>
+                                                        <transform name="lhandjoint">
+                                                            <set>
+                                                                <translate>-40 0 0</translate>
+                                                                <scale>20 20 20</scale>
+                                                            </set>
+                                                            <object instanceof="handJoint">
+                                                                <material>
+                                                                    <color>1 1 1</color>
+                                                                </material>
+                                                            </object>
+                                                        </transform>
+                                                        <transform name="lhand">
+                                                            <set>
+                                                                <translate>-55 0 0</translate>
+                                                                <scale>20 20 20</scale>
+                                                            </set>
+                                                            <object instanceof="hand">
+                                                                <material>
+                                                                    <color>1 1 1</color>
+                                                                </material>
+                                                            </object>
+                                                        </transform>
+                                                    </group>
+                                                </transform>
+                                            </transform>
+                                        </group>
                                     </transform>
                                 </transform>
                                 <transform name="rightwing">
                                     <set>
                                         <translate>20 5 0</translate>
-                                        <rotate>180 0 1 0</rotate>
                                     </set>
-                                    <group copyof="wing"></group>
+                                    <transform name="rightwing">
+                                        <set>
+                                            <rotate>-80 0 0 1</rotate>
+                                        </set>
+                                        <group name="rwing">
+                                            <transform name="rhumerusjoint">
+                                                <set>
+                                                    <rotate>180 0 0 1</rotate>
+                                                    <scale>20 20 20</scale>
+                                                </set>
+                                                <object instanceof="handJoint">
+                                                    <material>
+                                                        <color>1 1 1</color>
+                                                    </material>
+                                                </object>
+                                            </transform>
+                                            <transform name="rhumerus">
+                                                <set>
+                                                    <translate>20 0 0</translate>
+                                                    <rotate>180 0 0 1</rotate>
+                                                    <scale>20 20 20</scale>
+                                                </set>
+                                                <object instanceof="humerus">
+                                                    <material>
+                                                        <color>1 1 1</color>
+                                                    </material>
+                                                </object>
+                                            </transform>
+                                            <transform name="rightlowerarm">
+                                                <set>
+                                                    <translate>40 0 0</translate>
+                                                </set>
+                                                <transform name="rightlowerarm">
+                                                    <set>
+                                                    </set>
+                                                    <group>
+                                                        <transform name="rulnajoint">
+                                                            <set>
+                                                                <rotate>180 0 0 1</rotate>
+                                                                <scale>20 20 20</scale>
+                                                            </set>
+                                                            <object instanceof="ulnaJoint">
+                                                                <material>
+                                                                    <color>1 1 1</color>
+                                                                </material>
+                                                            </object>
+                                                        </transform>
+                                                        <transform name="rightulna">
+                                                            <set>
+                                                                <translate>0 0 0</translate>
+                                                            </set>
+                                                            <transform name="rightulna">
+                                                                <set>
+                                                                    <translate>20 0 0</translate>
+                                                                    <rotate>180 0 0 1</rotate>
+                                                                    <scale>20 20 20</scale>
+                                                                </set>
+                                                                <object instanceof="ulna">
+                                                                    <material>
+                                                                        <color>1 1 1</color>
+                                                                    </material>
+                                                                </object>
+                                                            </transform>
+                                                        </transform>
+                                                        <transform name="rhandjoint">
+                                                            <set>
+                                                                <translate>40 0 0</translate>
+                                                                <rotate>180 0 0 1</rotate>
+                                                                <scale>20 20 20</scale>
+                                                            </set>
+                                                            <object instanceof="handJoint">
+                                                                <material>
+                                                                    <color>1 1 1</color>
+                                                                </material>
+                                                            </object>
+                                                        </transform>
+                                                        <transform name="righthand">
+                                                            <set>
+                                                                <translate>55 0 0</translate>
+                                                            </set>
+                                                            <transform name="righthand">
+                                                                <set>
+                                                                    <rotate>180 0 0 1</rotate>
+                                                                    <scale>20 20 20</scale>
+                                                                </set>
+                                                                <object instanceof="hand">
+                                                                    <material>
+                                                                        <color>1 1 1</color>
+                                                                    </material>
+                                                                </object>
+                                                            </transform>
+                                                        </transform>
+                                                    </group>
+                                                </transform>
+                                            </transform>
+                                        </group>
+                                    </transform>
                                 </transform>
-                            </transform>
+                            </group>
                         </transform>
                     </group>
                 </group>

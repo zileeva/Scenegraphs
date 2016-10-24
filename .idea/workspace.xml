@@ -24,23 +24,18 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="-1906">
-              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-=======
-            <state relative-caret-position="1190">
-              <caret line="129" column="35" selection-start-line="129" selection-start-column="35" selection-end-line="129" selection-end-column="35" />
+            <state relative-caret-position="138">
+              <caret line="115" column="52" selection-start-line="115" selection-start-column="52" selection-end-line="115" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scenegraph.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Scenegraph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../extras/sgraph/Scenegraph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
->>>>>>> origin/master
+            <state relative-caret-position="176">
+              <caret line="157" column="54" selection-start-line="157" selection-start-column="54" selection-end-line="157" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,24 +43,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JOGLFrame.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JOGLFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="59" column="54" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
+            <state relative-caret-position="220">
+              <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bird.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="two-birds.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scenegraphs/two-birds.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bird.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenegraphs/bird.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="325" column="54" selection-start-line="325" selection-start-column="54" selection-end-line="325" selection-end-column="54" />
+            <state relative-caret-position="367">
+              <caret line="327" column="77" selection-start-line="327" selection-start-column="77" selection-end-line="327" selection-end-column="77" />
               <folding>
                 <element signature="n#set#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
-                <marker date="1477281301413" expanded="false" signature="1099:7228" ph="..." />
+                <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#5;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#0;n#group#0;n#transform#0;n#transform#6;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#1;n#group#0;n#transform#0;n#transform#6;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#0;n#group#0;n#transform#0;n#transform#7;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#1;n#group#0;n#transform#0;n#transform#7;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#2;n#group#0;n#transform#0;n#transform#7;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#0;n#group#0;n#transform#0;n#transform#2;n#group#0;n#transform#0;n#transform#7;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+                <element signature="n#transform#2;n#group#0;n#transform#0;n#transform#2;n#group#0;n#transform#0;n#transform#7;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -74,8 +91,8 @@
       <file leaf-file-name="humanoid.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenegraphs/humanoid.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1960">
-              <caret line="191" column="46" selection-start-line="191" selection-start-column="46" selection-end-line="191" selection-end-column="46" />
+            <state relative-caret-position="-542">
+              <caret line="193" column="54" selection-start-line="193" selection-start-column="54" selection-end-line="193" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -103,7 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../utilities/util/GLRenderer.java" />
         <option value="$PROJECT_DIR$/../utilities/util/INode.java" />
         <option value="$PROJECT_DIR$/../utilities/util/GroupNode.java" />
         <option value="$PROJECT_DIR$/../utilities/util/TransformNode.java" />
@@ -142,18 +158,19 @@
         <option value="$PROJECT_DIR$/../extras/util/ObjImporter.java" />
         <option value="$PROJECT_DIR$/../extras/sgraph/SceneXMLReader.java" />
         <option value="$PROJECT_DIR$/src/VertexAttribProducer.java" />
-        <option value="$PROJECT_DIR$/src/scenegraphs/two-humanoids.xml" />
         <option value="$PROJECT_DIR$/../extras/util/ObjectInstance.java" />
         <option value="$PROJECT_DIR$/../extras/sgraph/GL3ScenegraphRenderer.java" />
         <option value="$PROJECT_DIR$/src/scenegraphs/y-humanoid.xml.xsl" />
         <option value="$PROJECT_DIR$/src/scenegraphs/a-humanoid.xml" />
         <option value="$PROJECT_DIR$/src/scenegraphs/two-y-a-humanoids.xml" />
         <option value="$PROJECT_DIR$/src/scenegraphs/y-humanoid.xml" />
-        <option value="$PROJECT_DIR$/src/View.java" />
         <option value="$PROJECT_DIR$/src/scenegraphs/humanoid.xml" />
-        <option value="$PROJECT_DIR$/../extras/sgraph/Scenegraph.java" />
-        <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
         <option value="$PROJECT_DIR$/src/scenegraphs/bird.xml" />
+        <option value="$PROJECT_DIR$/src/scenegraphs/two-humanoids.xml" />
+        <option value="$PROJECT_DIR$/src/scenegraphs/two-birds.xml" />
+        <option value="$PROJECT_DIR$/../extras/sgraph/Scenegraph.java" />
+        <option value="$PROJECT_DIR$/src/View.java" />
+        <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
       </list>
     </option>
   </component>
@@ -196,8 +213,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-<<<<<<< HEAD
-=======
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scenegraphs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scenegraphs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scenegraphs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scenegraphs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scenegraphs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scenegraphs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scenegraphs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scenegraphs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scenegraphs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scenegraphs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Scenegraphs" />
@@ -208,12 +277,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
->>>>>>> origin/master
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -227,6 +295,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Anastasia\Desktop\CS4300\Assignment3\Scenegraphs\src\scenegraphs" />
       <recent name="$PROJECT_DIR$/src/scenegraphs" />
     </key>
   </component>
@@ -517,12 +586,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-<<<<<<< HEAD
     <frame x="-9" y="41" width="1938" height="1048" extended-state="6" />
-=======
-    <frame x="0" y="23" width="1440" height="826" extended-state="0" />
->>>>>>> origin/master
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32902467" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -531,16 +596,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22423556" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27066818" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22717509" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-=======
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2274678" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
->>>>>>> origin/master
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22717509" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -605,30 +666,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphs/humanoid.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../extras/util/ObjectInstance.java" />
     <entry file="file://$PROJECT_DIR$/src/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="64" column="57" selection-start-line="64" selection-start-column="57" selection-end-line="64" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -663,9 +706,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="52" column="69" selection-start-line="52" selection-start-column="69" selection-end-line="52" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -673,9 +714,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -690,9 +729,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -713,7 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -722,7 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -757,15 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
           <caret line="131" column="50" selection-start-line="131" selection-start-column="50" selection-end-line="131" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphs/two-humanoids.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -773,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="26" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="192" column="45" selection-start-line="192" selection-start-column="45" selection-end-line="192" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -806,61 +830,86 @@
     <entry file="file://$PROJECT_DIR$/../extras/sgraph/INode.java" />
     <entry file="file://$PROJECT_DIR$/../extras/sgraph/GL3ScenegraphRenderer.java" />
     <entry file="file://$PROJECT_DIR$/../extras/sgraph/IScenegraph.java" />
-    <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
+    <entry file="file://$PROJECT_DIR$/../extras/sgraph/Scenegraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="59" column="54" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1906">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        <state relative-caret-position="176">
+          <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../extras/sgraph/Scenegraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scenegraphs/humanoid.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1960">
-          <caret line="191" column="46" selection-start-line="191" selection-start-column="46" selection-end-line="191" selection-end-column="46" />
+        <state relative-caret-position="-542">
+          <caret line="193" column="54" selection-start-line="193" selection-start-column="54" selection-end-line="193" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scenegraphs/bird.xml">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="139">
-          <caret line="325" column="54" selection-start-line="325" selection-start-column="54" selection-end-line="325" selection-end-column="54" />
-=======
-        <state relative-caret-position="1190">
-          <caret line="129" column="35" selection-start-line="129" selection-start-column="35" selection-end-line="129" selection-end-column="35" />
+        <state relative-caret-position="367">
+          <caret line="327" column="77" selection-start-line="327" selection-start-column="77" selection-end-line="327" selection-end-column="77" />
+          <folding>
+            <element signature="n#set#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#0;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#1;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#2;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#3;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#4;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#5;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#0;n#group#0;n#transform#0;n#transform#6;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#1;n#group#0;n#transform#0;n#transform#6;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#0;n#group#0;n#transform#0;n#transform#7;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#1;n#group#0;n#transform#0;n#transform#7;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#2;n#group#0;n#transform#0;n#transform#7;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#0;n#group#0;n#transform#0;n#transform#2;n#group#0;n#transform#0;n#transform#7;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+            <element signature="n#transform#2;n#group#0;n#transform#0;n#transform#2;n#group#0;n#transform#0;n#transform#7;n#group#0;n#transform#0;n#group#1;n#group#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphs/two-humanoids.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphs/two-birds.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="115" column="52" selection-start-line="115" selection-start-column="52" selection-end-line="115" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../extras/sgraph/Scenegraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
->>>>>>> origin/master
+        <state relative-caret-position="176">
+          <caret line="157" column="54" selection-start-line="157" selection-start-column="54" selection-end-line="157" selection-end-column="54" />
           <folding>
-            <element signature="n#set#0;n#transform#0;n#group#0;n#transform#0;n#scene#0;n#!!top" expanded="false" />
-            <marker date="1477281301413" expanded="false" signature="1099:7228" ph="..." />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JOGLFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,16 @@
+<scene>
+    <group>
+        <transform>
+            <set>
+            </set>
+            <group name="1" from="scenegraphs/bird.xml">
+            </group>
+        </transform>
+        <transform>
+            <set>
+            </set>
+            <group name="2" from="scenegraphs/bird.xml">
+            </group>
+        </transform>
+    </group>
+</scene>
