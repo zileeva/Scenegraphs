@@ -101,6 +101,7 @@ public class View
 
         gl.glClearColor(0,0,0, 1);
         gl.glClear(gl.GL_COLOR_BUFFER_BIT | gl.GL_DEPTH_BUFFER_BIT);
+        gl.glEnable(GL.GL_DEPTH_TEST);
 
         program.enable(gl);
 
@@ -113,7 +114,7 @@ public class View
          * Right now this matrix is identity, which means "no transformations"
          */
         modelView.push(new Matrix4f());
-        modelView.peek().lookAt(new Vector3f(0,100,600),new Vector3f(0,50,0),new Vector3f(0,1,0))
+        modelView.peek().lookAt(new Vector3f(0,100,500),new Vector3f(0,50,0),new Vector3f(0,1,0))
                         .mul(trackballTransform);
 
 
