@@ -37,6 +37,11 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
      */
     protected IScenegraphRenderer renderer;
 
+    /**
+     * Bird scene graph model
+     */
+    private Bird birdOne, birdTwo;
+
 
     public Scenegraph()
     {
@@ -44,6 +49,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         meshes = new HashMap<String,util.PolygonMesh<VertexType>>();
         nodes = new HashMap<String,INode>();
         textures = new HashMap<String,String>();
+
     }
 
     public void dispose()
@@ -83,6 +89,9 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         this.root = root;
         this.root.setScenegraph(this);
 
+        birdOne = new Bird(nodes, "1");
+        birdTwo = new Bird(nodes, "2");
+
     }
 
     /**
@@ -104,69 +113,11 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         meshes.put(name,mesh);
     }
 
-
-
-
     @Override
     public void animate(float time) {
 
-        INode rightwing = nodes.get("1-rightwing");
-        INode leftwing = nodes.get("1-leftwing");
-        INode bird = nodes.get("1-bird");
-        INode rightulna = nodes.get("1-rightlowerarm");
-        INode leftulna = nodes.get("1-leftlowerarm");
-
-        INode rightwingTwo = nodes.get("2-rightwing");
-        INode leftwingTwo = nodes.get("2-leftwing");
-        INode birdTwo = nodes.get("2-bird");
-        INode rightulnaTwo = nodes.get("2-rightlowerarm");
-        INode leftulnaTwo = nodes.get("2-leftlowerarm");
-
-        Float wingsTime = (2 * time) % 360;
-        Float angle = (float) Math.toRadians(wingsTime);
-        Float elbowangle = (float) Math.toRadians(-wingsTime);
-
-        if (angle > (float) Math.toRadians(180)) {
-            angle = (float) Math.toRadians(-wingsTime);
-            elbowangle = (float) Math.toRadians(0.02 * wingsTime);
-        }else if (angle < (float) Math.toRadians(180)) {
-            angle = (float) Math.toRadians(wingsTime);
-            elbowangle = (float) Math.toRadians(-0.2 * wingsTime);
-        }
-
-        rightwing.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));
-        rightulna.setAnimationTransform(new Matrix4f().rotate(elbowangle, 0, 0, 1));
-        rightwingTwo.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));
-        rightulnaTwo.setAnimationTransform(new Matrix4f().rotate(elbowangle, 0, 0, 1));
-
-        if (angle < (float) Math.toRadians(-180)) {
-            angle = (float) Math.toRadians(wingsTime);
-            elbowangle = (float) Math.toRadians(-0.02 * wingsTime);
-        }else if (angle >= (float) Math.toRadians(-180)) {
-            angle = (float) Math.toRadians(-wingsTime);
-            elbowangle = (float) Math.toRadians(0.2 * wingsTime);
-        }
-
-        leftwing.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));
-        leftulna.setAnimationTransform(new Matrix4f().rotate(elbowangle, 0, 0, 1));
-        leftwingTwo.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));
-        leftulnaTwo.setAnimationTransform(new Matrix4f().rotate(elbowangle, 0, 0, 1));
-
-        bird.setAnimationTransform(
-                new Matrix4f()
-                        .rotate((float) Math.toRadians(20), 0, 0, 1)
-                        .rotate(0.01f * time, 0, 1, 0)
-                        .translate(0, 0, 350)
-                        .rotate(90, 0, 1, 0)
-        );
-
-        birdTwo.setAnimationTransform(
-                new Matrix4f()
-                        .rotate((float) Math.toRadians(-20), 0, 0, 1)
-                        .rotate(0.01f * time, 0, 1, 0)
-                        .translate(0, 0, -350)
-                        .rotate(-90, 0, 1, 0)
-        );
+        birdOne.animate(time);
+        birdTwo.animate(time);
 
     }
 
@@ -183,7 +134,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
 
     @Override
     public Map<String, PolygonMesh<VertexType>> getPolygonMeshes() {
-       Map<String,util.PolygonMesh<VertexType>> meshes = new HashMap<String,PolygonMesh<VertexType>>(this.meshes);
+        Map<String,util.PolygonMesh<VertexType>> meshes = new HashMap<String,PolygonMesh<VertexType>>(this.meshes);
         return meshes;
     }
 

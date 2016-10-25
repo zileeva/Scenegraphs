@@ -99,7 +99,7 @@ public class View
     {
         GL3 gl = gla.getGL().getGL3();
 
-        gl.glClearColor(0,0,0, 1);
+        gl.glClearColor(0.69f, 0.8f , 0.9f, 1);
         gl.glClear(gl.GL_COLOR_BUFFER_BIT | gl.GL_DEPTH_BUFFER_BIT);
         gl.glEnable(GL.GL_DEPTH_TEST);
 
@@ -131,8 +131,7 @@ public class View
         scenegraph.draw(modelView);
         scenegraph.animate(time);
 
-        time = time + 1; // = (time + 10) % 360;
-//        bodyTime++;
+        time = time + 1;
     /*
      *OpenGL batch-processes all its OpenGL commands.
           *  *The next command asks OpenGL to "empty" its batch of issued commands, i.e. draw
