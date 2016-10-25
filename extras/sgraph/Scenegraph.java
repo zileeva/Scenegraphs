@@ -110,45 +110,63 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
     @Override
     public void animate(float time) {
 
-        INode righthand = nodes.get("righthand");
-        INode lefthand = nodes.get("lefthand");
-        INode humanoid = nodes.get("humanoid");
-        INode rightelbow = nodes.get("rightforearm");
-        INode leftelbow = nodes.get("leftforearm");
+        INode rightwing = nodes.get("1-rightwing");
+        INode leftwing = nodes.get("1-leftwing");
+        INode bird = nodes.get("1-bird");
+        INode rightulna = nodes.get("1-rightlowerarm");
+        INode leftulna = nodes.get("1-leftlowerarm");
 
-        Float wingsTime = time % 360;
+        INode rightwingTwo = nodes.get("2-rightwing");
+        INode leftwingTwo = nodes.get("2-leftwing");
+        INode birdTwo = nodes.get("2-bird");
+        INode rightulnaTwo = nodes.get("2-rightlowerarm");
+        INode leftulnaTwo = nodes.get("2-leftlowerarm");
+
+        Float wingsTime = (2 * time) % 360;
         Float angle = (float) Math.toRadians(wingsTime);
-        Float elbowangle = (float) Math.toRadians(wingsTime);
+        Float elbowangle = (float) Math.toRadians(-wingsTime);
 
-        if (angle > (float) Math.toRadians(180) && angle <= (float) Math.toRadians(360)) {
-            angle = (float) Math.toRadians(-1 * wingsTime);
-            elbowangle = (float) Math.toRadians(0.2 * wingsTime);
-        } else if (angle < (float) Math.toRadians(180)) {
+        if (angle > (float) Math.toRadians(180)) {
+            angle = (float) Math.toRadians(-wingsTime);
+            elbowangle = (float) Math.toRadians(0.02 * wingsTime);
+        }else if (angle < (float) Math.toRadians(180)) {
             angle = (float) Math.toRadians(wingsTime);
             elbowangle = (float) Math.toRadians(-0.2 * wingsTime);
         }
 
-        lefthand.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));
-        leftelbow.setAnimationTransform(new Matrix4f().rotate(elbowangle, 0, 0, 1));
+        rightwing.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));
+        rightulna.setAnimationTransform(new Matrix4f().rotate(elbowangle, 0, 0, 1));
+        rightwingTwo.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));
+        rightulnaTwo.setAnimationTransform(new Matrix4f().rotate(elbowangle, 0, 0, 1));
 
-        if (angle <= (float) Math.toRadians(-180)){
+        if (angle < (float) Math.toRadians(-180)) {
             angle = (float) Math.toRadians(wingsTime);
-            elbowangle = (float) Math.toRadians(-0.2 * wingsTime);
-        } else if (angle > (float) Math.toRadians(0)) {
-            angle = (float) Math.toRadians(-1 * wingsTime);
+            elbowangle = (float) Math.toRadians(-0.02 * wingsTime);
+        }else if (angle >= (float) Math.toRadians(-180)) {
+            angle = (float) Math.toRadians(-wingsTime);
             elbowangle = (float) Math.toRadians(0.2 * wingsTime);
         }
 
-        righthand.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));
-        rightelbow.setAnimationTransform(new Matrix4f().rotate(elbowangle, 0, 0, 1));
+        leftwing.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));
+        leftulna.setAnimationTransform(new Matrix4f().rotate(elbowangle, 0, 0, 1));
+        leftwingTwo.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));
+        leftulnaTwo.setAnimationTransform(new Matrix4f().rotate(elbowangle, 0, 0, 1));
 
-        humanoid.setAnimationTransform(
+        bird.setAnimationTransform(
                 new Matrix4f()
                         .rotate((float) Math.toRadians(20), 0, 0, 1)
-                        .rotate(0.002f * time, 0, 1, 0)
-                        .translate(30, 0, 30)
+                        .rotate(0.01f * time, 0, 1, 0)
+                        .translate(0, 0, 350)
+                        .rotate(90, 0, 1, 0)
         );
 
+        birdTwo.setAnimationTransform(
+                new Matrix4f()
+                        .rotate((float) Math.toRadians(-20), 0, 0, 1)
+                        .rotate(0.01f * time, 0, 1, 0)
+                        .translate(0, 0, -350)
+                        .rotate(-90, 0, 1, 0)
+        );
 
     }
 
