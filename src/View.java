@@ -1,20 +1,13 @@
 import com.jogamp.common.nio.Buffers;
 import com.jogamp.opengl.*;
-import com.jogamp.opengl.util.GLBuffers;
 import org.joml.Matrix4f;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
 
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.nio.FloatBuffer;
-import java.nio.IntBuffer;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -85,7 +78,7 @@ public class View
         //compile and make our shader program. Look at the ShaderProgram class for details on how this is done
         program = new util.ShaderProgram();
 
-        program.createProgram(gl,"shaders/triangles.vert","shaders/triangles.frag");
+        program.createProgram(gl, "shaders/phong-multiple.vert", "shaders/phong-multiple.frag");
 
         shaderLocations = program.getAllShaderVariables(gl);
 
@@ -98,6 +91,8 @@ public class View
     public void draw(GLAutoDrawable gla)
     {
         GL3 gl = gla.getGL().getGL3();
+        FloatBuffer fb16 = Buffers.newDirectFloatBuffer(16);
+        FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
 
         gl.glClearColor(0.69f, 0.8f , 0.9f, 1);
         gl.glClear(gl.GL_COLOR_BUFFER_BIT | gl.GL_DEPTH_BUFFER_BIT);
@@ -114,22 +109,22 @@ public class View
          * Right now this matrix is identity, which means "no transformations"
          */
         modelView.push(new Matrix4f());
-        modelView.peek().lookAt(new Vector3f(0,100,500),new Vector3f(0,50,0),new Vector3f(0,1,0))
+        modelView.peek().lookAt(new Vector3f(0,100,100),new Vector3f(0,0,0),new Vector3f(0,1,0))
                         .mul(trackballTransform);
 
 
     /*
      *Supply the shader with all the matrices it expects.
     */
-        FloatBuffer fb = Buffers.newDirectFloatBuffer(16);
-        gl.glUniformMatrix4fv(projectionLocation,1,false,projection.get(fb));
+
+        gl.glUniformMatrix4fv(projectionLocation,1,false,projection.get(fb16));
         //return;
 
 
         //gl.glPolygonMode(GL.GL_FRONT_AND_BACK,GL3.GL_LINE); //OUTLINES
 
         scenegraph.draw(modelView);
-        scenegraph.animate(time);
+//        scenegraph.animate(time);
 
         time = time + 1;
     /*
