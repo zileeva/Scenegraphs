@@ -166,15 +166,21 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
       case "object": {
         String name = "";
         String objectname = "";
+        String textureName = "";
         for (int i = 0; i < attributes.getLength(); i++) {
           if (attributes.getQName(i).equals("name")) {
             name = attributes.getValue(i);
           } else if (attributes.getQName(i).equals("instanceof")) {
             objectname = attributes.getValue(i);
           }
+          else if (attributes.getQName(i).equals("texture"))
+          {
+            textureName = attributes.getValue(i);
+          }
         }
         if (objectname.length() > 0) {
           node = new sgraph.LeafNode(objectname, scenegraph, name);
+          node.setTextureName(textureName);
           try {
             stackNodes.peek().addChild(node);
           } catch (IllegalArgumentException e) {
@@ -182,6 +188,21 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
           }
           stackNodes.push(node);
           subgraph.put(stackNodes.peek().getName(), stackNodes.peek());
+        }
+      }
+      break;
+      case "image": {
+        String name = "";
+        String path = "";
+        for (int i = 0; i < attributes.getLength(); i++) {
+          if (attributes.getQName(i).equals("name")) {
+            name = attributes.getValue(i);
+          } else if (attributes.getQName(i).equals("path")) {
+            path = attributes.getValue(i);
+          }
+        }
+        if ((name.length() > 0) && (path.length() > 0)) {
+          scenegraph.addTexture(name, path);
         }
       }
       break;

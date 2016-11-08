@@ -70,9 +70,12 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         this.renderer = renderer;
 
         //now add all the meshes
-        for (String meshName:meshes.keySet())
-        {
-            this.renderer.addMesh(meshName,meshes.get(meshName));
+        for (String meshName:meshes.keySet()) {
+            this.renderer.addMesh(meshName, meshes.get(meshName));
+        }
+
+        for (Map.Entry<String, String> t : textures.entrySet()) {
+            this.renderer.addTexture(t.getKey(), t.getValue());
         }
 
     }
@@ -149,7 +152,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
 
     @Override
     public void addTexture(String name, String path) {
-        textures.put(name,path);
+        textures.put(name, path);
     }
 
 

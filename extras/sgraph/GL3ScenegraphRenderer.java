@@ -74,6 +74,7 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
         meshRenderers = new HashMap<String,util.ObjectInstance>();
         shaderLocations = new util.ShaderLocationsVault();
         shaderLocationsSet = false;
+        textures = new HashMap<String,TextureImage>();
     }
 
     /**
@@ -127,12 +128,11 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
     }
 
     @Override
-    public void addTexture(String name,String path)
-    {
+    public void addTexture(String name, String path) {
         TextureImage image = null;
         String imageFormat = path.substring(path.indexOf('.')+1);
         try {
-            image = new TextureImage(path,imageFormat,name);
+            image = new TextureImage(path, imageFormat, name);
         } catch (IOException e) {
             throw new IllegalArgumentException("Texture "+path+" cannot be read!");
         }
@@ -205,8 +205,7 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             gl.glActiveTexture(GL.GL_TEXTURE0);
             gl.glUniform1i(textureLocation, 0);
 
-
-            if (textures.get(name).getTexture().getMustFlipVertically()) {
+            if (textures.get(textureName).getTexture().getMustFlipVertically()) {
                 textureTransform = new Matrix4f().translate(0, 1, 0).scale(1, -1, 1);
             } else {
                 textureTransform = new Matrix4f();
