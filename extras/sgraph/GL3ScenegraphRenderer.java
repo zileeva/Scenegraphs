@@ -62,10 +62,10 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
     private Matrix4f textureTransform = new Matrix4f();
 
     class LightLocation {
-        int ambient, diffuse, specular, position;
+        int ambient, diffuse, specular, position, spotAngle, spotDirection;
 
         public LightLocation() {
-            ambient = diffuse = specular = position = -1;
+            ambient = diffuse = specular = position = spotAngle = spotDirection = -1;
         }
     }
 
@@ -162,15 +162,22 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
     private void drawLights(List<util.Light> lights) {
         GL3 gl = glContext.getGL().getGL3();
         FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
+        FloatBuffer fb16 = Buffers.newDirectFloatBuffer(16);
 
         gl.glUniform1i(numLightsLocation, lights.size());
 
         for (int i = 0; i < lights.size(); i++) {
-            System.out.println(lights.get(i).getPosition());
+//            System.out.println(lights.get(i).getPosition());
             gl.glUniform4fv(lightLocations.get(i).position, 1, lights.get(i).getPosition().get(fb4));
+
             gl.glUniform3fv(lightLocations.get(i).ambient, 1, lights.get(i).getAmbient().get(fb4));
             gl.glUniform3fv(lightLocations.get(i).diffuse, 1, lights.get(i).getDiffuse().get(fb4));
             gl.glUniform3fv(lightLocations.get(i).specular, 1, lights.get(i).getSpecular().get(fb4));
+
+//            gl.glUniform1f(lightLocations.get(i).spotAngle, (float) Math.cos(lights.get(i).getSpotCutoff()));
+            gl.glUniform2f(lightLocations.get(i).spotAngle, 1, lights.get(i).getSpotCutoff());
+
+            gl.glUniform4fv(lightLocations.get(i).spotDirection, 1, lights.get(i).getSpotDirection().get(fb4));
         }
     }
 
@@ -193,24 +200,20 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
 
             FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
             FloatBuffer fb16 = Buffers.newDirectFloatBuffer(16);
-//
-//
-//            gl.glEnable(GL.GL_TEXTURE_2D);
-//            gl.glActiveTexture(GL.GL_TEXTURE0);
-//
-//
-//            gl.glUniform1i(textureLocation, 0);
 
-//            if (textures.get(name).getTexture().getMustFlipVertically()) //for
-//            // flipping the
-//            // image vertically
-//            {
-//                textureTransform = new Matrix4f().translate(0, 1, 0).scale(1, -1, 1);
-//            } else
-//                textureTransform = new Matrix4f();
-//
-//            // textureTransform = new Matrix4f(textureTransform).rotate((float)Math.toRadians(45),0,0,1);
-//            gl.glUniformMatrix4fv(texturematrixLocation, 1, false, textureTransform.get(fb16));
+            gl.glEnable(GL.GL_TEXTURE_2D);
+            gl.glActiveTexture(GL.GL_TEXTURE0);
+            gl.glUniform1i(textureLocation, 0);
+
+
+            if (textures.get(name).getTexture().getMustFlipVertically()) {
+                textureTransform = new Matrix4f().translate(0, 1, 0).scale(1, -1, 1);
+            } else {
+                textureTransform = new Matrix4f();
+            }
+//            textureTransform = new Matrix4f(textureTransform).rotate((float)Math.toRadians(45),0,0,1);
+            gl.glUniformMatrix4fv(texturematrixLocation, 1, false, textureTransform.get(fb16));
+
             gl.glUniform3fv(materialAmbientLocation, 1, material.getAmbient().get(fb4));
             gl.glUniform3fv(materialDiffuseLocation, 1, material.getDiffuse().get(fb4));
             gl.glUniform3fv(materialSpecularLocation, 1, material.getSpecular().get(fb4));
@@ -250,6 +253,8 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             ll.diffuse = shaderLocations.getLocation(name + ".diffuse");
             ll.specular = shaderLocations.getLocation(name + ".specular");
             ll.position = shaderLocations.getLocation(name + ".position");
+            ll.spotAngle = shaderLocations.getLocation(name + ".spotAngle");
+            ll.spotDirection = shaderLocations.getLocation(name + ".spotDirection");
             lightLocations.add(ll);
         }
     }

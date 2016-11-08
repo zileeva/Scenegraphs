@@ -14,6 +14,8 @@ struct LightProperties
     vec3 diffuse;
     vec3 specular;
     vec4 position;
+    float spotAngle;
+    vec3 spotDirection;
 };
 
 
@@ -31,6 +33,8 @@ uniform int numLights;
 uniform sampler2D image;
 
 out vec4 fColor;
+
+float calcSpotlight(LightProperties light, vec3 lightVector);
 
 void main()
 {
@@ -67,8 +71,26 @@ void main()
             specular = material.specular * light[i].specular * pow(rDotV,material.shininess);
         else
             specular = vec3(0,0,0);
-        fColor = fColor + vec4(ambient+diffuse+specular,1.0);
+
+        float spotlight = calcSpotlight(light[i], lightVec);
+        fColor = fColor + spotlight * vec4(ambient + diffuse + specular, 1.0);
     }
-    //fColor = fColor * texture(image,fTexCoord.st);
+    fColor = fColor * texture(image,fTexCoord.st);
     //fColor = vec4(fTexCoord.s,fTexCoord.t,0,1);
+}
+
+
+float calcSpotlight(LightProperties light, vec3 lightVector) {
+    vec3 l = normalize(lightVector);
+	vec3 d = normalize(light.spotDirection.xyz);
+	//vec3 d = normalize(vec3(-lightVector));
+
+	if(light.spotAngle >= 180) 	return 1.0;
+
+	float lDOTd = dot(-l, d);
+
+	if(lDOTd < cos(light.spotAngle)) return 0.0;
+
+	return 1.0;
+
 }
