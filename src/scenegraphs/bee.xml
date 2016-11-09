@@ -1,0 +1,261 @@
+<scene>
+    <instance name="eye" path="models/sphere"></instance>
+    <instance name="body" path="models/bee-body"></instance>
+    <instance name="head" path="models/sphere"></instance>
+    <instance name="tail" path="models/bee-tail"></instance>
+    <instance name="leg" path="models/bee-leg"></instance>
+    <instance name="antenna" path="models/bee-antenna"></instance>
+    <instance name="wing" path="models/bee-wing"></instance>
+    <transform name="bee">
+        <set>
+            <scale>50 50 50</scale>
+        </set>
+        <group name="unit-height-bee">
+            <transform>
+                <set>
+                    <scale>0.0125 0.0125 0.0125</scale>
+                </set>
+                <group>
+                    <group name="beeHead">
+                        <transform name="beeHeadTrans">
+                            <set>
+                                <translate>0 25 40</translate>
+                            </set>
+                            <group name="head">
+                                <transform name="headTrans">
+                                    <set>
+                                        <scale>20 20 20</scale>
+                                    </set>
+
+                                    <object instanceof="head">
+                                        <material>
+                                            <ambient> 0.0 0.0 0.0 </ambient>
+                                            <diffuse> 0.8 0.8 0.8</diffuse>
+                                            <specular> 0.8 0.8 0.8</specular>
+                                            <shininess> 100 </shininess>
+                                        </material>
+                                    </object>
+                                </transform>
+                                <transform>
+                                    <set>
+                                        <translate>-15 10 10</translate>
+                                    </set>
+                                    <transform name="leftEye">
+                                        <set>
+                                            <scale>3 3 3</scale>
+                                        </set>
+                                        <object instanceof="eye">
+                                            <material>
+                                                <ambient> 0.2 0.2 0.2 </ambient>
+                                                <diffuse> 0.8 0.8 0.8</diffuse>
+                                                <specular> 0.8 0.8 0.8</specular>
+                                                <shininess> 100 </shininess>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </transform>
+                                <transform>
+                                    <set>
+                                        <translate>15 10 10</translate>
+                                    </set>
+                                    <transform name="rightEye">
+                                        <set>
+                                            <scale>3 3 3</scale>
+                                        </set>
+                                        <object instanceof="eye">
+                                            <material>
+                                                <ambient> 0.2 0.2 0.2 </ambient>
+                                                <diffuse> 0.8 0.8 0.8</diffuse>
+                                                <specular> 0.8 0.8 0.8</specular>
+                                                <shininess> 100 </shininess>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </transform>
+                                <transform>
+                                    <set>
+                                        <translate>-10 20 8</translate>
+                                    </set>
+                                    <transform name="leftAntenna">
+                                        <set>
+                                            <scale>25 25 25</scale>
+                                        </set>
+                                        <object instanceof="antenna">
+                                            <material>
+                                                <ambient> 0.0 0.0 0.0 </ambient>
+                                                <diffuse> 0.8 0.8 0.8</diffuse>
+                                                <specular> 0.8 0.8 0.8</specular>
+                                                <shininess> 100 </shininess>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </transform>
+                                <transform>
+                                    <set>
+                                        <translate>10 20 8</translate>
+                                    </set>
+                                    <transform name="rightAntenna">
+                                        <set>
+                                            <scale>25 25 25</scale>
+                                        </set>
+                                        <object instanceof="antenna">
+                                            <material>
+                                                <ambient> 0.0 0.0 0.0 </ambient>
+                                                <diffuse> 0.8 0.8 0.8</diffuse>
+                                                <specular> 0.8 0.8 0.8</specular>
+                                                <shininess> 100 </shininess>
+                                            </material>
+                                        </object>
+                                    </transform>
+                                </transform>
+
+                            </group>
+                        </transform>
+                    </group>
+                    <group name="birdBody">
+                        <transform>
+                            <set>
+                                <translate>0 0 0</translate>
+                            </set>
+                            <group name="body">
+                                <transform name="torso">
+                                    <set>
+                                        <scale>25 25 25</scale>
+                                    </set>
+                                    <object instanceof="body">
+                                        <material>
+                                            <ambient> 1.0 1.0 0.0 </ambient>
+                                            <diffuse> 0.8 0.8 0.8</diffuse>
+                                            <specular> 0.8 0.8 0.8</specular>
+                                            <shininess> 100 </shininess>
+                                        </material>
+                                    </object>
+                                </transform>
+                                <transform name="leftLeg">
+                                    <set>
+                                        <translate>-12 -25 0</translate>
+                                    </set>
+                                    <group name="leg">
+                                        <transform name="legFront">
+                                            <set>
+                                                <translate>0 0 -20</translate>
+                                                <scale>20 20 20</scale>
+                                            </set>
+                                            <object instanceof="leg">
+                                                <material>
+                                                    <ambient> 0.0 0.0 0.0 </ambient>
+                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                    <specular> 0.8 0.8 0.8</specular>
+                                                    <shininess> 100 </shininess>
+                                                </material>
+                                            </object>
+                                        </transform>
+                                        <transform name="legMiddle">
+                                            <set>
+                                                <translate>0 0 0</translate>
+                                                <scale>20 20 20</scale>
+                                            </set>
+                                            <object instanceof="leg">
+                                                <material>
+                                                    <ambient> 0.0 0.0 0.0 </ambient>
+                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                    <specular> 0.8 0.8 0.8</specular>
+                                                    <shininess> 100 </shininess>
+                                                </material>
+                                            </object>
+                                        </transform>
+                                        <transform name="legBack">
+                                            <set>
+                                                <translate>0 0 20</translate>
+                                                <scale>20 20 20</scale>
+                                            </set>
+                                            <object instanceof="leg">
+                                                <material>
+                                                    <ambient> 0.0 0.0 0.0 </ambient>
+                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                    <specular> 0.8 0.8 0.8</specular>
+                                                    <shininess> 100 </shininess>
+                                                </material>
+                                            </object>
+                                        </transform>
+                                    </group>
+                                </transform>
+                                <transform name="rightLeg">
+                                    <set>
+                                        <translate>12 -25 0</translate>
+                                    </set>
+                                    <group copyof="leg">
+                                    </group>
+                                </transform>
+                                <transform name="leftwing">
+                                    <set>
+                                        <translate>0 30 -5</translate>
+                                        <rotate>-50 0 0 1</rotate>
+                                        <rotate>-20 1 0 0</rotate>
+                                    </set>
+                                    <transform name="leftwing">
+                                        <set>
+                                            <rotate>0 0 0 1</rotate>
+                                        </set>
+                                        <transform name="lwing">
+                                                <set>
+                                                    <scale>25 25 25</scale>
+                                                </set>
+                                                <object instanceof="wing">
+                                                    <material>
+                                                        <ambient> 1.0 1.0 1.0 </ambient>
+                                                        <diffuse> 0.8 0.8 0.8</diffuse>
+                                                        <specular> 0.8 0.8 0.8</specular>
+                                                        <shininess> 100 </shininess>
+                                                    </material>
+                                                </object>
+                                        </transform>
+                                    </transform>
+                                </transform>
+                                <transform name="rightwing">
+                                    <set>
+                                        <translate>0 30 -5</translate>
+                                        <rotate>50 0 0 1</rotate>
+                                        <rotate>-20 1 0 0</rotate>
+                                    </set>
+                                    <transform name="rightwing">
+                                        <set>
+                                            <rotate>0 0 0 1</rotate>
+                                        </set>
+                                        <transform name="rwing">
+                                            <set>
+                                                <scale>25 25 25</scale>
+                                            </set>
+                                            <object instanceof="wing">
+                                                <material>
+                                                    <ambient> 1.0 1.0 1.0 </ambient>
+                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                    <specular> 0.8 0.8 0.8</specular>
+                                                    <shininess> 100 </shininess>
+                                                </material>
+                                            </object>
+                                        </transform>
+                                    </transform>
+                                </transform>
+                                <transform name="tail">
+                                    <set>
+                                        <translate>0 0 -50</translate>
+                                        <scale>25 25 25</scale>
+                                    </set>
+                                    <object instanceof="tail">
+                                        <material>
+                                            <ambient> 0.0 0.0 0.0 </ambient>
+                                            <diffuse> 0.8 0.8 0.8</diffuse>
+                                            <specular> 0.8 0.8 0.8</specular>
+                                            <shininess> 100 </shininess>
+                                        </material>
+                                    </object>
+                                </transform>
+                            </group>
+                        </transform>
+                    </group>
+                </group>
+            </transform>
+        </group>
+    </transform>
+</scene>

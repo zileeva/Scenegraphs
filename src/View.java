@@ -107,7 +107,7 @@ public class View {
 
         if (cameraMode == TypeOfCamera.GLOBAL) {
             modelView.peek()
-                    .lookAt(new Vector3f(0,100,100),new Vector3f(0,0,0),new Vector3f(0,1,0))
+                    .lookAt(new Vector3f(0,300,400),new Vector3f(0,10,0),new Vector3f(0,1,0))
                     .mul(trackballTransform);
         } else {
             modelView.peek()
@@ -121,7 +121,7 @@ public class View {
         //gl.glPolygonMode(GL.GL_FRONT_AND_BACK,GL3.GL_LINE); //OUTLINES
 
         scenegraph.draw(modelView);
-//        scenegraph.animate(time);
+        scenegraph.animate(time);
 
         time = time + 1;
         gl.glFlush();
