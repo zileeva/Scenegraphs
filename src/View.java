@@ -93,8 +93,9 @@ public class View {
         GL3 gl = gla.getGL().getGL3();
         FloatBuffer fb16 = Buffers.newDirectFloatBuffer(16);
         FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
+        gl.glClearColor(0.0f, 0.0f , 0.0f, 1);
 
-        gl.glClearColor(0.69f, 0.8f , 0.9f, 1);
+//        gl.glClearColor(0.69f, 0.8f , 0.9f, 1);
         gl.glClear(gl.GL_COLOR_BUFFER_BIT | gl.GL_DEPTH_BUFFER_BIT);
         gl.glEnable(GL.GL_DEPTH_TEST);
 

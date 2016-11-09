@@ -174,8 +174,8 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             gl.glUniform3fv(lightLocations.get(i).diffuse, 1, lights.get(i).getDiffuse().get(fb4));
             gl.glUniform3fv(lightLocations.get(i).specular, 1, lights.get(i).getSpecular().get(fb4));
 
-//            gl.glUniform1f(lightLocations.get(i).spotAngle, (float) Math.cos(lights.get(i).getSpotCutoff()));
-            gl.glUniform1f(lightLocations.get(i).spotAngle, (float) Math.toRadians(lights.get(i).getSpotCutoff()));
+            gl.glUniform1f(lightLocations.get(i).spotAngle, (float) Math.cos(Math.toRadians(lights.get(i).getSpotCutoff())));
+//            gl.glUniform1f(lightLocations.get(i).spotAngle, (float) Math.toRadians(lights.get(i).getSpotCutoff()));
 
             gl.glUniform4fv(lightLocations.get(i).spotDirection, 1, lights.get(i).getSpotDirection().get(fb4));
         }

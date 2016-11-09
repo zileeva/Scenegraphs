@@ -15,7 +15,7 @@ struct LightProperties
     vec3 specular;
     vec4 position;
     float spotAngle;
-    vec3 spotDirection;
+    vec4 spotDirection;
 };
 
 
@@ -73,10 +73,7 @@ void main()
             specular = vec3(0,0,0);
 
         float spotlight = calcSpotlight(light[i], lightVec);
-        if (spotlight > 0.1) {
-            fColor = fColor + vec4(ambient + diffuse + specular, 1.0);
-        }
-
+        if (spotlight > 0.1) fColor = fColor +  vec4(ambient + diffuse + specular, 1.0);
     }
     fColor = fColor * texture(image,fTexCoord.st);
     //fColor = vec4(fTexCoord.s,fTexCoord.t,0,1);
@@ -86,14 +83,8 @@ void main()
 float calcSpotlight(LightProperties light, vec3 lightVector) {
     vec3 l = normalize(lightVector);
 	vec3 d = normalize(light.spotDirection.xyz);
-	//vec3 d = normalize(vec3(-lightVector));
-
-	if(light.spotAngle >= 180) 	return 1.0;
-
 	float lDOTd = dot(-l, d);
-
-	if(lDOTd < cos(light.spotAngle)) return 0.0;
-
+	//if(light.spotAngle >= 180) 	return 1.0;
+	if(lDOTd < light.spotAngle) return 0.0;
 	return 1.0;
-
 }

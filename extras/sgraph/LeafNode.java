@@ -76,8 +76,6 @@ public class LeafNode extends AbstractNode
     public List<Light> getLights(Stack<Matrix4f> modelView) {
         List<Light> transformLights = new ArrayList<>();
         for (Light light : this.lights) {
-            System.out.println(light.getPosition());
-
             Vector4f pos = light.getPosition();
             Vector4f spotD = light.getSpotDirection();
             Matrix4f transformation = new Matrix4f(modelView.peek());
