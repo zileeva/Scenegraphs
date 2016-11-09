@@ -2,6 +2,9 @@ package sgraph;
 
 import org.joml.Matrix4f;
 import util.Light;
+import java.util.*;
+
+import java.util.ArrayList;
 
 /**
  * This abstract class implements the {@link sgraph.INode} interface. It provides default methods
@@ -23,6 +26,8 @@ public abstract class AbstractNode implements INode
      * A reference to the {@link sgraph.IScenegraph} object that this is part of
      */
     protected IScenegraph scenegraph;
+
+    protected List<util.Light> lights = new ArrayList<>();
 
     public AbstractNode(IScenegraph graph,String name)
     {
@@ -121,6 +126,12 @@ public abstract class AbstractNode implements INode
         throw new IllegalArgumentException(getName()+" is not a transform node");
     }
 
+    @Override
+    public Matrix4f getTransform() {
+        throw new IllegalArgumentException(getName()+" is not a transform node");
+    }
+
+
     /**
      * By default, throws an exception. Any nodes that are capable of storing material should
      * override this method
@@ -142,7 +153,7 @@ public abstract class AbstractNode implements INode
      * @param l
      */
     public void addLight(Light l) {
-        throw new UnsupportedOperationException("Lights not supported yet!");
+        this.lights.add(l);
     }
 
 }

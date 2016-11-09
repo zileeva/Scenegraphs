@@ -1,9 +1,11 @@
 package sgraph;
 
 import com.jogamp.common.nio.Buffers;
+import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL3;
 import com.jogamp.opengl.GLAutoDrawable;
 import org.joml.Matrix4f;
+import org.joml.Vector4f;
 import util.IVertexData;
 import util.TextureImage;
 
@@ -45,11 +47,34 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
      */
     private boolean shaderLocationsSet;
 
+    private int
+            modelviewLocation,
+            normalmatrixLocation,
+            texturematrixLocation,
+            materialAmbientLocation,
+            materialDiffuseLocation,
+            materialSpecularLocation,
+            materialShininessLocation,
+            textureLocation,
+            numLightsLocation;
+    private List<LightLocation> lightLocations = new ArrayList<>();
+
+    private Matrix4f textureTransform = new Matrix4f();
+
+    class LightLocation {
+        int ambient, diffuse, specular, position, spotAngle, spotDirection;
+
+        public LightLocation() {
+            ambient = diffuse = specular = position = spotAngle = spotDirection = -1;
+        }
+    }
+
     public GL3ScenegraphRenderer()
     {
         meshRenderers = new HashMap<String,util.ObjectInstance>();
         shaderLocations = new util.ShaderLocationsVault();
         shaderLocationsSet = false;
+        textures = new HashMap<String,TextureImage>();
     }
 
     /**
@@ -103,12 +128,11 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
     }
 
     @Override
-    public void addTexture(String name,String path)
-    {
+    public void addTexture(String name, String path) {
         TextureImage image = null;
         String imageFormat = path.substring(path.indexOf('.')+1);
         try {
-            image = new TextureImage(path,imageFormat,name);
+            image = new TextureImage(path, imageFormat, name);
         } catch (IOException e) {
             throw new IllegalArgumentException("Texture "+path+" cannot be read!");
         }
@@ -121,8 +145,10 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
      * @param modelView
      */
     @Override
-    public void draw(INode root, Stack<Matrix4f> modelView)
-    {
+    public void draw(INode root, Stack<Matrix4f> modelView) {
+        List<util.Light> lights = root.getLights(modelView);
+        initShaderVariables(lights);
+        drawLights(lights);
         root.draw(this,modelView);
     }
 
@@ -132,6 +158,29 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
         for (util.ObjectInstance s:meshRenderers.values())
             s.cleanup(glContext);
     }
+
+    private void drawLights(List<util.Light> lights) {
+        GL3 gl = glContext.getGL().getGL3();
+        FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
+        FloatBuffer fb16 = Buffers.newDirectFloatBuffer(16);
+
+        gl.glUniform1i(numLightsLocation, lights.size());
+
+        for (int i = 0; i < lights.size(); i++) {
+//            System.out.println(lights.get(i).getPosition());
+            gl.glUniform4fv(lightLocations.get(i).position, 1, lights.get(i).getPosition().get(fb4));
+
+            gl.glUniform3fv(lightLocations.get(i).ambient, 1, lights.get(i).getAmbient().get(fb4));
+            gl.glUniform3fv(lightLocations.get(i).diffuse, 1, lights.get(i).getDiffuse().get(fb4));
+            gl.glUniform3fv(lightLocations.get(i).specular, 1, lights.get(i).getSpecular().get(fb4));
+
+//            gl.glUniform1f(lightLocations.get(i).spotAngle, (float) Math.cos(lights.get(i).getSpotCutoff()));
+            gl.glUniform1f(lightLocations.get(i).spotAngle, (float) Math.toRadians(lights.get(i).getSpotCutoff()));
+
+            gl.glUniform4fv(lightLocations.get(i).spotDirection, 1, lights.get(i).getSpotDirection().get(fb4));
+        }
+    }
+
     /**
      * Draws a specific mesh.
      * If the mesh has been added to this renderer, it delegates to its correspond mesh renderer
@@ -143,34 +192,78 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
      * @param transformation
      */
     @Override
-    public void drawMesh(String name, util.Material material,String textureName,final Matrix4f transformation) {
+    public void drawMesh(String name, util.Material material, String textureName,final Matrix4f transformation) {
         if (meshRenderers.containsKey(name))
         {
             GL3 gl = glContext.getGL().getGL3();
             //get the color
 
-            FloatBuffer fb = Buffers.newDirectFloatBuffer(4);
+            FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
+            FloatBuffer fb16 = Buffers.newDirectFloatBuffer(16);
 
-            int loc = shaderLocations.getLocation("vColor");
-            //set the color for all vertices to be drawn for this object
-            if (loc<0)
-                throw new IllegalArgumentException("No shader variable for \" vColor \"");
+            gl.glEnable(GL.GL_TEXTURE_2D);
+            gl.glActiveTexture(GL.GL_TEXTURE0);
+            gl.glUniform1i(textureLocation, 0);
 
-            gl.glUniform3fv(loc,1,material.getAmbient().get(fb));
+            if (textureName == "" || textureName == null) {
+                this.addTexture("white", "textures/white.png");
+                textureName = "white";
+            }
 
-            loc = shaderLocations.getLocation("modelview");
-            if (loc<0)
+            if (textures.get(textureName).getTexture().getMustFlipVertically()) {
+                textureTransform = new Matrix4f().translate(0, 1, 0).scale(1, -1, 1);
+            } else {
+                textureTransform = new Matrix4f();
+            }
+//            textureTransform = new Matrix4f(textureTransform).rotate((float)Math.toRadians(45),0,0,1);
+            gl.glUniformMatrix4fv(texturematrixLocation, 1, false, textureTransform.get(fb16));
+
+            gl.glUniform3fv(materialAmbientLocation, 1, material.getAmbient().get(fb4));
+            gl.glUniform3fv(materialDiffuseLocation, 1, material.getDiffuse().get(fb4));
+            gl.glUniform3fv(materialSpecularLocation, 1, material.getSpecular().get(fb4));
+            gl.glUniform1f(materialShininessLocation, material.getShininess());
+
+            if (modelviewLocation<0)
                 throw new IllegalArgumentException("No shader variable for \" modelview \"");
 
-            fb = Buffers.newDirectFloatBuffer(16);
-            transformation.get(fb);
-            gl.glUniformMatrix4fv(loc,1,false,transformation.get(fb));
+            Matrix4f normalmatrix = new Matrix4f(transformation);
+            normalmatrix = normalmatrix.invert().transpose();
+            gl.glUniformMatrix4fv(modelviewLocation, 1, false, transformation.get(fb16));
+            gl.glUniformMatrix4fv(normalmatrixLocation, 1, false, normalmatrix.get(fb16));
 
+            textures.get(textureName).getTexture().setTexParameteri(gl, GL.GL_TEXTURE_MIN_FILTER, GL
+                    .GL_NEAREST);
             meshRenderers.get(name).draw(glContext);
         }
     }
 
+    private void initShaderVariables(List<util.Light> lights) {
+        //get input variables that need to be given to the shader program
+        modelviewLocation = shaderLocations.getLocation("modelview");
+        normalmatrixLocation = shaderLocations.getLocation("normalmatrix");
+        texturematrixLocation = shaderLocations.getLocation("texturematrix");
+        materialAmbientLocation = shaderLocations.getLocation("material.ambient");
+        materialDiffuseLocation = shaderLocations.getLocation("material.diffuse");
+        materialSpecularLocation = shaderLocations.getLocation("material.specular");
+        materialShininessLocation = shaderLocations.getLocation("material.shininess");
 
+        textureLocation = shaderLocations.getLocation("image");
+
+        numLightsLocation = shaderLocations.getLocation("numLights");
+        for (int i = 0; i < lights.size(); i++) {
+            LightLocation ll = new LightLocation();
+            String name;
+
+            name = "light[" + i + "]";
+            ll.ambient = shaderLocations.getLocation(name + "" + ".ambient");
+            ll.diffuse = shaderLocations.getLocation(name + ".diffuse");
+            ll.specular = shaderLocations.getLocation(name + ".specular");
+            ll.position = shaderLocations.getLocation(name + ".position");
+            ll.spotAngle = shaderLocations.getLocation(name + ".spotAngle");
+            ll.spotDirection = shaderLocations.getLocation(name + ".spotDirection");
+            lightLocations.add(ll);
+        }
+    }
 
     /**
      * Queries the shader program for all variables and locations, and adds them to itself

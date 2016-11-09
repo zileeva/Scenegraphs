@@ -99,5 +99,9 @@ public interface IScenegraph<VertexType extends IVertexData>
      * @param path
      */
     void addTexture(String name,String path);
+
+    Matrix4f getAnimationTransform();
+    Matrix4f getTransform();
+
     void dispose();
 }

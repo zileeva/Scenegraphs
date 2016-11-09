@@ -2,6 +2,7 @@ package sgraph;
 
 import com.jogamp.opengl.GLAutoDrawable;
 import org.joml.Matrix4f;
+import org.joml.Vector4f;
 import util.Light;
 
 import java.util.ArrayList;
@@ -105,6 +106,36 @@ public class TransformNode extends AbstractNode
         this.child.setParent(this);
     }
 
+    @Override
+    public List<Light> getLights(Stack<Matrix4f> modelView) {
+
+        modelView.push(new Matrix4f(modelView.peek()));
+        modelView.peek().mul(animation_transform)
+                .mul(transform);
+
+        List<Light> transformLights = new ArrayList<>();
+        for (Light light : this.lights) {
+            Vector4f pos = light.getPosition();
+            Vector4f spotD = light.getSpotDirection();
+            Matrix4f transformation = new Matrix4f(modelView.peek());
+            pos = transformation.transform(pos);
+            spotD = transformation.transform(spotD);
+            Light l = new util.Light();
+            l.setAmbient(light.getAmbient());
+            l.setDiffuse(light.getDiffuse());
+            l.setSpecular(light.getSpecular());
+            l.setSpotDirection(spotD.x, spotD.y, spotD.z);
+            l.setPosition(pos);
+            transformLights.add(l);
+
+        }
+
+        transformLights.addAll(child.getLights(modelView));
+
+        modelView.pop();
+        return transformLights;
+    }
+
     /**
      * Draws the scene graph rooted at this node
      * After preserving the current top of the modelview stack, this "post-multiplies" its
@@ -160,7 +191,8 @@ public class TransformNode extends AbstractNode
      * Gets the animation transform of this node
      * @return
      */
-    Matrix4f getAnimationTransform()
+    @Override
+    public Matrix4f getAnimationTransform()
     {
         return animation_transform;
     }

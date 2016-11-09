@@ -5,14 +5,11 @@
     <instance name="cone" path="models/cone"></instance>
     <image name="earth" path="textures/earthmap.png" />
     <image name="white" path="textures/white.png" />
-
     <!--<light>-->
-        <!--<ambient>0.5 0.5 0.5</ambient>-->
-        <!--<diffuse>0.5 0.5 0.5</diffuse>-->
-        <!--<specular>0.5 0.5 0.5</specular>-->
-        <!--<position>0 500 0 </position>-->
-        <!--<spotangle>25</spotangle>-->
-        <!--<spotdirection>0 -1 0 </spotdirection>-->
+    <!--<ambient>0.2 0.2 0.2</ambient>-->
+    <!--<diffuse>0.5 0.5 0.5</diffuse>-->
+    <!--<specular>0.5 0.5 0.5</specular>-->
+    <!--<position>0 500 0 </position>-->
     <!--</light>-->
     <transform>
         <set>
@@ -38,10 +35,10 @@
                     <scale>20 25 20</scale>
                 </set>
                 <light>
-                    <ambient>0.5 0.5 0.5</ambient>
-                    <diffuse>0.5 0.5 0.5</diffuse>
-                    <specular>0.5 0.5 0.5</specular>
-                    <position>0 25 0 </position>
+                    <ambient>0.0 0.0 0.0</ambient>
+                    <diffuse>0.2 0.2 0.9</diffuse>
+                    <specular>0.2 0.2 0.9</specular>
+                    <position>0 50 0 </position>
                     <spotangle>45</spotangle>
                     <spotdirection>0 0 -1 </spotdirection>
                 </light>

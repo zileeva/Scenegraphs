@@ -79,7 +79,7 @@ public interface INode
      */
     void setTransform(Matrix4f m) throws IllegalArgumentException;
 
-
+    Matrix4f getTransform() throws IllegalArgumentException;
     /**
      * Set the animation transformation associated with this node. Not all types of nodes can have transformations.
      * If the node cannot store an animation transformation, this method throws an {@link }IllegalArgumentException}
@@ -88,6 +88,7 @@ public interface INode
      */
     void setAnimationTransform(Matrix4f m) throws IllegalArgumentException;
 
+    Matrix4f getAnimationTransform() throws IllegalArgumentException;
 
     /**
      * Set the material associated with this node. Not all types of nodes can have materials associated with them.
@@ -111,5 +112,7 @@ public interface INode
      * @param l
      */
     void addLight(Light l);
+
+    List<util.Light> getLights(Stack<Matrix4f> modelView);
 }
 
