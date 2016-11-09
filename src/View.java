@@ -19,8 +19,8 @@ import java.util.Stack;
  * The View class is the "controller" of all our OpenGL stuff. It cleanly encapsulates all our OpenGL functionality from the rest of Java GUI, managed
  * by the JOGLFrame class.
  */
-public class View
-{
+public class View {
+    private enum TypeOfCamera {GLOBAL,FPS};
     private int WINDOW_WIDTH,WINDOW_HEIGHT;
     private Stack<Matrix4f> modelView;
     private Matrix4f projection,trackballTransform;
@@ -33,8 +33,9 @@ public class View
     private int projectionLocation;
     private sgraph.IScenegraph<VertexAttrib> scenegraph;
 
-    private float time = 0, bodyTime = 0;
+    private float time = 0;
 
+    TypeOfCamera cameraMode;
 
 
     public View()
@@ -44,6 +45,8 @@ public class View
         trackballRadius = 300;
         trackballTransform = new Matrix4f();
         scenegraph = null;
+
+        cameraMode = TypeOfCamera.GLOBAL;
     }
 
     public void initScenegraph(GLAutoDrawable gla,InputStream in) throws Exception
@@ -56,6 +59,7 @@ public class View
         program.enable(gl);
 
         scenegraph = sgraph.SceneXMLReader.importScenegraph(in,new VertexAttribProducer());
+        System.out.println(scenegraph.getNodes());
 
         sgraph.IScenegraphRenderer renderer = new sgraph.GL3ScenegraphRenderer();
         renderer.setContext(gla);
@@ -68,12 +72,8 @@ public class View
         program.disable(gl);
     }
 
-    public void init(GLAutoDrawable gla) throws Exception
-    {
+    public void init(GLAutoDrawable gla) throws Exception {
         GL3 gl = gla.getGL().getGL3();
-
-
-
 
         //compile and make our shader program. Look at the ShaderProgram class for details on how this is done
         program = new util.ShaderProgram();
@@ -103,45 +103,43 @@ public class View
         while (!modelView.empty())
             modelView.pop();
 
-        /*
-         *In order to change the shape of this triangle, we can either move the vertex positions above, or "transform" them
-         * We use a modelview matrix to store the transformations to be applied to our triangle.
-         * Right now this matrix is identity, which means "no transformations"
-         */
         modelView.push(new Matrix4f());
-        modelView.peek().lookAt(new Vector3f(0,100,100),new Vector3f(0,0,0),new Vector3f(0,1,0))
-                        .mul(trackballTransform);
 
+        if (cameraMode == TypeOfCamera.GLOBAL) {
+            modelView.peek()
+                    .lookAt(new Vector3f(0,500,500),new Vector3f(0,0,0),new Vector3f(0,1,0))
+                    .mul(trackballTransform);
+        } else {
+            modelView.peek()
+                    .mul(new Matrix4f(scenegraph.getAnimationTransform().mul(scenegraph.getTransform())).invert());
+        }
 
-    /*
-     *Supply the shader with all the matrices it expects.
-    */
 
         gl.glUniformMatrix4fv(projectionLocation,1,false,projection.get(fb16));
-        //return;
 
 
         //gl.glPolygonMode(GL.GL_FRONT_AND_BACK,GL3.GL_LINE); //OUTLINES
 
         scenegraph.draw(modelView);
-//        scenegraph.animate(time);
+        scenegraph.animate(time);
 
         time = time + 1;
-    /*
-     *OpenGL batch-processes all its OpenGL commands.
-          *  *The next command asks OpenGL to "empty" its batch of issued commands, i.e. draw
-     *
-     *This a non-blocking function. That is, it will signal OpenGL to draw, but won't wait for it to
-     *finish drawing.
-     *
-     *If you would like OpenGL to start drawing and wait until it is done, call glFinish() instead.
-     */
         gl.glFlush();
 
         program.disable(gl);
 
 
 
+    }
+
+    public void setFPS()
+    {
+        cameraMode = TypeOfCamera.FPS;
+    }
+
+    public void setGlobal()
+    {
+        cameraMode = TypeOfCamera.GLOBAL;
     }
 
     public void mousePressed(int x,int y)
@@ -174,7 +172,7 @@ public class View
         gl.glViewport(0, 0, width, height);
 
         projection = new Matrix4f().perspective((float)Math.toRadians(120.0f),(float)width/height,0.1f,10000.0f);
-       // proj = new Matrix4f().ortho(-400,400,-400,400,0.1f,10000.0f);
+//        projection = new Matrix4f().ortho(-400,400,-400,400,0.1f,10000.0f);
 
     }
 

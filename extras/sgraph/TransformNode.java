@@ -2,7 +2,6 @@ package sgraph;
 
 import com.jogamp.opengl.GLAutoDrawable;
 import org.joml.Matrix4f;
-import org.joml.Vector4f;
 import util.Light;
 
 import java.util.ArrayList;
@@ -104,33 +103,6 @@ public class TransformNode extends AbstractNode
             throw new IllegalArgumentException("Transform node already has a child");
         this.child = child;
         this.child.setParent(this);
-    }
-
-    @Override
-    public List<Light> getLights(Stack<Matrix4f> modelView) {
-
-        modelView.push(new Matrix4f(modelView.peek()));
-        modelView.peek().mul(animation_transform)
-                .mul(transform);
-
-        List<Light> transformLights = new ArrayList<>();
-        for (Light light : this.lights) {
-            Vector4f pos = light.getPosition();
-            Matrix4f lightTransformation = new Matrix4f(modelView.peek());
-            pos = lightTransformation.transform(pos);
-            Light l = new util.Light();
-            l.setAmbient(light.getAmbient());
-            l.setDiffuse(light.getDiffuse());
-            l.setSpecular(light.getSpecular());
-            l.setPosition(pos);
-            transformLights.add(l);
-
-        }
-
-        transformLights.addAll(child.getLights(modelView));
-
-        modelView.pop();
-        return transformLights;
     }
 
     /**

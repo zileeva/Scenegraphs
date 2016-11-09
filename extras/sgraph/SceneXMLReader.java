@@ -55,8 +55,6 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
   private String data;
   private Matrix4f transform;
   private util.Material material;
-  private util.Light light;
-  private String parent = "";
   private Map<String, INode> subgraph;
 
   public IScenegraph<K> getScenegraph() {
@@ -75,7 +73,6 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
     subgraph = new TreeMap<String, INode>();
     transform = new Matrix4f();
     material = new util.Material();
-    light = new util.Light();
   }
 
   public void endDocument() throws SAXException {
@@ -84,14 +81,6 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
     System.out.println("Start tag: " + qName);
     switch (qName) {
-      case "light": {
-        parent = qName;
-        break;
-      }
-      case "material": {
-        parent = qName;
-        break;
-      }
       case "scene": {
         stackNodes.push(new sgraph.GroupNode(scenegraph, "Root of scene graph"));
         subgraph.put(stackNodes.peek().getName(), stackNodes.peek());
@@ -166,21 +155,15 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
       case "object": {
         String name = "";
         String objectname = "";
-        String textureName = "";
         for (int i = 0; i < attributes.getLength(); i++) {
           if (attributes.getQName(i).equals("name")) {
             name = attributes.getValue(i);
           } else if (attributes.getQName(i).equals("instanceof")) {
             objectname = attributes.getValue(i);
           }
-          else if (attributes.getQName(i).equals("texture"))
-          {
-            textureName = attributes.getValue(i);
-          }
         }
         if (objectname.length() > 0) {
           node = new sgraph.LeafNode(objectname, scenegraph, name);
-          node.setTextureName(textureName);
           try {
             stackNodes.peek().addChild(node);
           } catch (IllegalArgumentException e) {
@@ -188,21 +171,6 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
           }
           stackNodes.push(node);
           subgraph.put(stackNodes.peek().getName(), stackNodes.peek());
-        }
-      }
-      break;
-      case "image": {
-        String name = "";
-        String path = "";
-        for (int i = 0; i < attributes.getLength(); i++) {
-          if (attributes.getQName(i).equals("name")) {
-            name = attributes.getValue(i);
-          } else if (attributes.getQName(i).equals("path")) {
-            path = attributes.getValue(i);
-          }
-        }
-        if ((name.length() > 0) && (path.length() > 0)) {
-          scenegraph.addTexture(name, path);
         }
       }
       break;
@@ -262,10 +230,6 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
         sc = new Scanner(data);
         transform.translate(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         break;
-      case "light":
-        stackNodes.peek().addLight(light);
-        light = new util.Light();
-        break;
       case "material":
         stackNodes.peek().setMaterial(material);
         material = new util.Material();
@@ -279,27 +243,15 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
         break;
       case "ambient":
         sc = new Scanner(data);
-        if (parent == "material") {
-          material.setAmbient(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
-        } else {
-          light.setAmbient(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
-        }
+        material.setAmbient(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         break;
       case "diffuse":
         sc = new Scanner(data);
-        if (parent == "material") {
-          material.setDiffuse(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
-        } else {
-          light.setDiffuse(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
-        }
+        material.setDiffuse(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         break;
       case "specular":
         sc = new Scanner(data);
-        if (parent == "material") {
-          material.setSpecular(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
-        } else {
-          light.setSpecular(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
-        }
+        material.setSpecular(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         break;
       case "emissive":
         sc = new Scanner(data);
@@ -324,18 +276,6 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
       case "refractive":
         sc = new Scanner(data);
         material.setRefractiveIndex(sc.nextFloat());
-        break;
-      case "position":
-        sc = new Scanner(data);
-        light.setPosition(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
-        break;
-      case "spotangle":
-        sc = new Scanner(data);
-        light.setSpotAngle(sc.nextFloat());
-        break;
-      case "spotdirection":
-        sc = new Scanner(data);
-        light.setSpotDirection(sc.nextFloat(), sc.nextFloat(), sc.nextFloat());
         break;
     }
     data = "";

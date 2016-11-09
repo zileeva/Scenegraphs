@@ -1,4 +1,7 @@
 <scene>
+    <image name="earth" path="textures/earthmap.png" />
+    <image name="white" path="textures/white.png" />
+
     <group>
         <transform>
             <set>

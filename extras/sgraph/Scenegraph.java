@@ -2,7 +2,6 @@ package sgraph;
 
 import com.jogamp.opengl.GL3;
 import org.joml.Matrix4f;
-import org.joml.Vector4f;
 import util.IVertexData;
 import util.PolygonMesh;
 
@@ -38,11 +37,6 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
      */
     protected IScenegraphRenderer renderer;
 
-    /**
-     * Bird scene graph model
-     */
-    private Bird birdOne, birdTwo;
-
 
     public Scenegraph()
     {
@@ -50,7 +44,6 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         meshes = new HashMap<String,util.PolygonMesh<VertexType>>();
         nodes = new HashMap<String,INode>();
         textures = new HashMap<String,String>();
-
     }
 
     public void dispose()
@@ -70,12 +63,9 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         this.renderer = renderer;
 
         //now add all the meshes
-        for (String meshName:meshes.keySet()) {
-            this.renderer.addMesh(meshName, meshes.get(meshName));
-        }
-
-        for (Map.Entry<String, String> t : textures.entrySet()) {
-            this.renderer.addTexture(t.getKey(), t.getValue());
+        for (String meshName:meshes.keySet())
+        {
+            this.renderer.addMesh(meshName,meshes.get(meshName));
         }
 
     }
@@ -93,9 +83,6 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         this.root = root;
         this.root.setScenegraph(this);
 
-        birdOne = new Bird(nodes, "1");
-        birdTwo = new Bird(nodes, "2");
-
     }
 
     /**
@@ -104,7 +91,6 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
      */
     @Override
     public void draw(Stack<Matrix4f> modelView) {
-
         if ((root!=null) && (renderer!=null))
         {
             renderer.draw(root,modelView);
@@ -118,11 +104,51 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         meshes.put(name,mesh);
     }
 
+
+
+
     @Override
     public void animate(float time) {
 
-        birdOne.animate(time);
-        birdTwo.animate(time);
+        INode righthand = nodes.get("righthand");
+        INode lefthand = nodes.get("lefthand");
+        INode humanoid = nodes.get("humanoid");
+        INode rightelbow = nodes.get("rightforearm");
+        INode leftelbow = nodes.get("leftforearm");
+
+        Float wingsTime = time % 360;
+        Float angle = (float) Math.toRadians(wingsTime);
+        Float elbowangle = (float) Math.toRadians(wingsTime);
+
+        if (angle > (float) Math.toRadians(180) && angle <= (float) Math.toRadians(360)) {
+            angle = (float) Math.toRadians(-1 * wingsTime);
+            elbowangle = (float) Math.toRadians(0.2 * wingsTime);
+        } else if (angle < (float) Math.toRadians(180)) {
+            angle = (float) Math.toRadians(wingsTime);
+            elbowangle = (float) Math.toRadians(-0.2 * wingsTime);
+        }
+        System.out.println(lefthand);
+        lefthand.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));
+        leftelbow.setAnimationTransform(new Matrix4f().rotate(elbowangle, 0, 0, 1));
+
+        if (angle <= (float) Math.toRadians(-180)){
+            angle = (float) Math.toRadians(wingsTime);
+            elbowangle = (float) Math.toRadians(-0.2 * wingsTime);
+        } else if (angle > (float) Math.toRadians(0)) {
+            angle = (float) Math.toRadians(-1 * wingsTime);
+            elbowangle = (float) Math.toRadians(0.2 * wingsTime);
+        }
+
+        righthand.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));
+        rightelbow.setAnimationTransform(new Matrix4f().rotate(elbowangle, 0, 0, 1));
+
+        humanoid.setAnimationTransform(
+                new Matrix4f()
+                        .rotate((float) Math.toRadians(20), 0, 0, 1)
+                        .rotate(0.002f * time, 0, 1, 0)
+                        .translate(30, 0, 30)
+        );
+
 
     }
 
@@ -139,7 +165,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
 
     @Override
     public Map<String, PolygonMesh<VertexType>> getPolygonMeshes() {
-        Map<String,util.PolygonMesh<VertexType>> meshes = new HashMap<String,PolygonMesh<VertexType>>(this.meshes);
+       Map<String,util.PolygonMesh<VertexType>> meshes = new HashMap<String,PolygonMesh<VertexType>>(this.meshes);
         return meshes;
     }
 
@@ -152,7 +178,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
 
     @Override
     public void addTexture(String name, String path) {
-        textures.put(name, path);
+        textures.put(name,path);
     }
 
 

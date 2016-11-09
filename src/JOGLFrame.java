@@ -57,7 +57,7 @@ public class JOGLFrame extends JFrame
                     view.init(canvas);
                     InputStream in = getClass().getClassLoader()
                             .getResourceAsStream
-                                    ("scenegraphs/cone" +
+                                    ("scenegraphs/two-birds" +
                                     ".xml");
                     view.initScenegraph(canvas,in);
                     textRenderer = new TextRenderer(new Font("SansSerif", Font.PLAIN, 18),true,false);
@@ -112,6 +112,14 @@ public class JOGLFrame extends JFrame
 
         @Override
         public void keyReleased(KeyEvent e) {
+            switch (e.getKeyCode()) {
+                case KeyEvent.VK_O :
+                    view.setFPS();
+                    break;
+                case KeyEvent.VK_G:
+                    view.setGlobal();
+                    break;
+            }
 
         }
     }

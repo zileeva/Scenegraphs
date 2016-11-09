@@ -111,7 +111,5 @@ public interface INode
      * @param l
      */
     void addLight(Light l);
-
-    List<util.Light> getLights(Stack<Matrix4f> modelView);
 }
 

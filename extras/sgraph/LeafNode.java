@@ -2,11 +2,7 @@ package sgraph;
 
 import com.jogamp.opengl.GL3;
 import org.joml.Matrix4f;
-import org.joml.Vector4f;
-import util.Light;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
@@ -41,8 +37,8 @@ public class LeafNode extends AbstractNode
 	 *Set the material of each vertex in this object
 	 */
     @Override
-    public void setMaterial(util.Material mat) {
-//        System.out.println("Material: " + mat);
+    public void setMaterial(util.Material mat)
+    {
         material = new util.Material(mat);
     }
 
@@ -72,24 +68,6 @@ public class LeafNode extends AbstractNode
         return newclone;
     }
 
-    @Override
-    public List<Light> getLights(Stack<Matrix4f> modelView) {
-        List<Light> transformLights = new ArrayList<>();
-        for (Light light : this.lights) {
-            System.out.println(light.getPosition());
-
-            Vector4f pos = light.getPosition();
-            Matrix4f lightTransformation = new Matrix4f(modelView.peek());
-            pos = lightTransformation.transform(pos);
-            Light l = new util.Light();
-            l.setAmbient(light.getAmbient());
-            l.setDiffuse(light.getDiffuse());
-            l.setSpecular(light.getSpecular());
-            l.setPosition(pos);
-            transformLights.add(l);
-        }
-        return transformLights;
-    }
 
     /**
      * Delegates to the scene graph for rendering. This has two advantages:
@@ -104,7 +82,8 @@ public class LeafNode extends AbstractNode
     @Override
     public void draw(IScenegraphRenderer context,Stack<Matrix4f> modelView) throws IllegalArgumentException
     {
-        if (objInstanceName.length()>0) {
+        if (objInstanceName.length()>0)
+        {
             context.drawMesh(objInstanceName,material,textureName,modelView.peek());
         }
     }
