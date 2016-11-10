@@ -13,6 +13,8 @@
     <instance name="ulnaJoint" path="models/ulnajoint"></instance>
     <instance name="handJoint" path="models/handjoint"></instance>
 
+    <image name="white" path="textures/white.png" />
+
     <transform name="bird">
         <set>
             <scale>100 100 100</scale>
@@ -33,7 +35,7 @@
                                     <set>
                                         <scale>20 20 20</scale>
                                     </set>
-                                    <object instanceof="head">
+                                    <object instanceof="head" texture="white">
                                         <material>
                                             <ambient>1 1 1</ambient>
                                             <diffuse> 0.8 0.8 0.8</diffuse>
@@ -50,7 +52,7 @@
                                         <set>
                                             <scale>3 3 3</scale>
                                         </set>
-                                        <object instanceof="eye">
+                                        <object instanceof="eye" texture="white">
                                             <material>
                                                 <ambient> 0.0 0.0 0.0 </ambient>
                                                 <diffuse> 0.8 0.8 0.8</diffuse>
@@ -68,7 +70,7 @@
                                         <set>
                                             <scale>3 3 3</scale>
                                         </set>
-                                        <object instanceof="eye">
+                                        <object instanceof="eye" texture="white">
                                             <material>
                                                 <ambient> 0.0 0.0 0.0 </ambient>
                                                 <diffuse> 0.8 0.8 0.8</diffuse>
@@ -86,7 +88,7 @@
                                         <set>
                                             <scale>20 20 20</scale>
                                         </set>
-                                        <object instanceof="beak">
+                                        <object instanceof="beak" texture="white">
                                             <material>
                                                 <ambient> 1 0.5 0.0 </ambient>
                                                 <diffuse> 0.8 0.8 0.8</diffuse>
@@ -106,7 +108,7 @@
                                         <set>
                                             <scale>20 20 20</scale>
                                         </set>
-                                        <object instanceof="feather">
+                                        <object instanceof="feather" texture="white">
                                             <material>
                                                 <ambient> 1.0 1.0 1.0 </ambient>
                                                 <diffuse> 0.8 0.8 0.8</diffuse>
@@ -125,7 +127,7 @@
                                         <set>
                                             <scale>20 20 20</scale>
                                         </set>
-                                        <object instanceof="feather">
+                                        <object instanceof="feather" texture="white">
                                             <material>
                                                 <ambient> 1.0 1.0 1.0 </ambient>
                                                 <diffuse> 0.8 0.8 0.8</diffuse>
@@ -145,7 +147,7 @@
                                         <set>
                                             <scale>20 20 20</scale>
                                         </set>
-                                        <object instanceof="feather">
+                                        <object instanceof="feather" texture="white">
                                             <material>
                                                 <ambient> 1.0 1.0 1.0 </ambient>
                                                 <diffuse> 0.8 0.8 0.8</diffuse>
@@ -170,7 +172,7 @@
                                         <rotate>0 0 0 1</rotate>
                                         <scale>25 20 20</scale>
                                     </set>
-                                    <object instanceof="body">
+                                    <object instanceof="body" texture="white">
                                         <material>
                                             <ambient> 1.0 1.0 1.0 </ambient>
                                             <diffuse> 0.8 0.8 0.8</diffuse>
@@ -185,7 +187,7 @@
                                         <rotate>30 0 1 0</rotate>
                                         <scale>20 20 20</scale>
                                     </set>
-                                    <object instanceof="tailFeather">
+                                    <object instanceof="tailFeather" texture="white">
                                         <material>
                                             <ambient> 1.0 1.0 1.0 </ambient>
                                             <diffuse> 0.8 0.8 0.8</diffuse>
@@ -200,7 +202,7 @@
                                         <rotate>0 0 0 1</rotate>
                                         <scale>20 20 20</scale>
                                     </set>
-                                    <object instanceof="tailFeather">
+                                    <object instanceof="tailFeather" texture="white">
                                         <material>
                                             <ambient> 1.0 1.0 1.0 </ambient>
                                             <diffuse> 0.8 0.8 0.8</diffuse>
@@ -215,7 +217,7 @@
                                         <rotate>-30 0 1 0</rotate>
                                         <scale>20 20 20</scale>
                                     </set>
-                                    <object instanceof="tailFeather">
+                                    <object instanceof="tailFeather" texture="white">
                                         <material>
                                             <ambient> 1.0 1.0 1.0 </ambient>
                                             <diffuse> 0.8 0.8 0.8</diffuse>
@@ -234,7 +236,7 @@
                                                 <translate>0 0 0</translate>
                                                 <scale>20 20 20</scale>
                                             </set>
-                                            <object instanceof="leg">
+                                            <object instanceof="leg" texture="white">
                                                 <material>
                                                     <ambient> 1.0 1.0 0.0 </ambient>
                                                     <diffuse> 0.8 0.8 0.8</diffuse>
@@ -249,7 +251,7 @@
                                                 <rotate>-25 0 1 0</rotate>
                                                 <scale>20 20 20</scale>
                                             </set>
-                                            <object instanceof="toe">
+                                            <object instanceof="toe" texture="white">
                                                 <material>
                                                     <ambient> 1.0 1.0 0.0 </ambient>
                                                     <diffuse> 0.8 0.8 0.8</diffuse>
@@ -264,7 +266,7 @@
                                                 <rotate>0 0 1 0</rotate>
                                                 <scale>20 20 20</scale>
                                             </set>
-                                            <object instanceof="toe">
+                                            <object instanceof="toe" texture="white">
                                                 <material>
                                                     <ambient> 1.0 1.0 0.0 </ambient>
                                                     <diffuse> 0.8 0.8 0.8</diffuse>
@@ -279,7 +281,7 @@
                                                 <rotate>25 0 1 0</rotate>
                                                 <scale>20 20 20</scale>
                                             </set>
-                                            <object instanceof="toe">
+                                            <object instanceof="toe" texture="white">
                                                 <material>
                                                     <ambient> 1.0 1.0 0.0 </ambient>
                                                     <diffuse> 0.8 0.8 0.8</diffuse>
@@ -310,7 +312,7 @@
                                                 <set>
                                                     <scale>20 20 20</scale>
                                                 </set>
-                                                <object instanceof="handJoint">
+                                                <object instanceof="handJoint" texture="white">
                                                     <material>
                                                         <ambient> 1.0 1.0 1.0 </ambient>
                                                         <diffuse> 0.8 0.8 0.8</diffuse>
@@ -325,7 +327,7 @@
                                                     <rotate>0 0 0 1</rotate>
                                                     <scale>20 20 20</scale>
                                                 </set>
-                                                <object instanceof="humerus">
+                                                <object instanceof="humerus" texture="white">
                                                     <material>
                                                         <ambient> 1.0 1.0 1.0 </ambient>
                                                         <diffuse> 0.8 0.8 0.8</diffuse>
@@ -346,7 +348,7 @@
                                                             <set>
                                                                 <scale>20 20 20</scale>
                                                             </set>
-                                                            <object instanceof="ulnaJoint">
+                                                            <object instanceof="ulnaJoint" texture="white">
                                                                 <material>
                                                                     <ambient> 1.0 1.0 1.0 </ambient>
                                                                     <diffuse> 0.8 0.8 0.8</diffuse>
@@ -360,7 +362,7 @@
                                                                 <translate>-20 0 0</translate>
                                                                 <scale>20 20 20</scale>
                                                             </set>
-                                                            <object instanceof="ulna">
+                                                            <object instanceof="ulna" texture="white">
                                                                 <material>
                                                                     <ambient> 1.0 1.0 1.0 </ambient>
                                                                     <diffuse> 0.8 0.8 0.8</diffuse>
@@ -374,7 +376,7 @@
                                                                 <translate>-40 0 0</translate>
                                                                 <scale>20 20 20</scale>
                                                             </set>
-                                                            <object instanceof="handJoint">
+                                                            <object instanceof="handJoint" texture="white">
                                                                 <material>
                                                                     <ambient> 1.0 1.0 1.0 </ambient>
                                                                     <diffuse> 0.8 0.8 0.8</diffuse>
@@ -388,7 +390,7 @@
                                                                 <translate>-55 0 0</translate>
                                                                 <scale>20 20 20</scale>
                                                             </set>
-                                                            <object instanceof="hand">
+                                                            <object instanceof="hand" texture="white">
                                                                 <material>
                                                                     <ambient> 1.0 1.0 1.0 </ambient>
                                                                     <diffuse> 0.8 0.8 0.8</diffuse>
@@ -417,7 +419,7 @@
                                                     <rotate>180 0 0 1</rotate>
                                                     <scale>20 20 20</scale>
                                                 </set>
-                                                <object instanceof="handJoint">
+                                                <object instanceof="handJoint" texture="white">
                                                     <material>
                                                         <ambient> 1.0 1.0 1.0 </ambient>
                                                         <diffuse> 0.8 0.8 0.8</diffuse>
@@ -432,7 +434,7 @@
                                                     <rotate>180 0 0 1</rotate>
                                                     <scale>20 20 20</scale>
                                                 </set>
-                                                <object instanceof="humerus">
+                                                <object instanceof="humerus" texture="white">
                                                     <material>
                                                         <ambient> 1.0 1.0 1.0 </ambient>
                                                         <diffuse> 0.8 0.8 0.8</diffuse>
@@ -454,7 +456,7 @@
                                                                 <rotate>180 0 0 1</rotate>
                                                                 <scale>20 20 20</scale>
                                                             </set>
-                                                            <object instanceof="ulnaJoint">
+                                                            <object instanceof="ulnaJoint" texture="white">
                                                                 <material>
                                                                     <ambient> 1.0 1.0 1.0 </ambient>
                                                                     <diffuse> 0.8 0.8 0.8</diffuse>
@@ -473,7 +475,7 @@
                                                                     <rotate>180 0 0 1</rotate>
                                                                     <scale>20 20 20</scale>
                                                                 </set>
-                                                                <object instanceof="ulna">
+                                                                <object instanceof="ulna" texture="white">
                                                                     <material>
                                                                         <ambient> 1.0 1.0 1.0 </ambient>
                                                                         <diffuse> 0.8 0.8 0.8</diffuse>
@@ -489,7 +491,7 @@
                                                                 <rotate>180 0 0 1</rotate>
                                                                 <scale>20 20 20</scale>
                                                             </set>
-                                                            <object instanceof="handJoint">
+                                                            <object instanceof="handJoint" texture="white">
                                                                 <material>
                                                                     <ambient> 1.0 1.0 1.0 </ambient>
                                                                     <diffuse> 0.8 0.8 0.8</diffuse>
@@ -507,7 +509,7 @@
                                                                     <rotate>180 0 0 1</rotate>
                                                                     <scale>20 20 20</scale>
                                                                 </set>
-                                                                <object instanceof="hand">
+                                                                <object instanceof="hand" texture="white">
                                                                     <material>
                                                                         <ambient> 1.0 1.0 1.0 </ambient>
                                                                         <diffuse> 0.8 0.8 0.8</diffuse>

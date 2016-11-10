@@ -159,12 +159,12 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
 
     @Override
     public Matrix4f getAnimationTransform() {
-        return birdOne.getBirdNode().getAnimationTransform();
+        return birdTwo.getBirdNode().getAnimationTransform();
     }
 
     @Override
     public Matrix4f getTransform() {
-        return birdOne.getBirdNode().getTransform();
+        return birdTwo.getBirdNode().getTransform();
     }
 
     @Override

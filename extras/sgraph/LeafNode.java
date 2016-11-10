@@ -107,6 +107,7 @@ public class LeafNode extends AbstractNode
     public void draw(IScenegraphRenderer context,Stack<Matrix4f> modelView) throws IllegalArgumentException
     {
         if (objInstanceName.length()>0) {
+            if (textureName == null || textureName == "") textureName = "white";
             context.drawMesh(objInstanceName,material,textureName,modelView.peek());
         }
     }

@@ -205,11 +205,6 @@ public class GL3ScenegraphRenderer implements IScenegraphRenderer {
             gl.glActiveTexture(GL.GL_TEXTURE0);
             gl.glUniform1i(textureLocation, 0);
 
-            if (textureName == "" || textureName == null) {
-                this.addTexture("white", "textures/white.png");
-                textureName = "white";
-            }
-
             if (textures.get(textureName).getTexture().getMustFlipVertically()) {
                 textureTransform = new Matrix4f().translate(0, 1, 0).scale(1, -1, 1);
             } else {

@@ -93,9 +93,9 @@ public class View {
         GL3 gl = gla.getGL().getGL3();
         FloatBuffer fb16 = Buffers.newDirectFloatBuffer(16);
         FloatBuffer fb4 = Buffers.newDirectFloatBuffer(4);
-        gl.glClearColor(0.0f, 0.0f , 0.0f, 1);
+//        gl.glClearColor(0.0f, 0.0f , 0.0f, 1);
 
-//        gl.glClearColor(0.69f, 0.8f , 0.9f, 1);
+        gl.glClearColor(0.69f, 0.8f , 0.9f, 1);
         gl.glClear(gl.GL_COLOR_BUFFER_BIT | gl.GL_DEPTH_BUFFER_BIT);
         gl.glEnable(GL.GL_DEPTH_TEST);
 
@@ -108,11 +108,16 @@ public class View {
 
         if (cameraMode == TypeOfCamera.GLOBAL) {
             modelView.peek()
-                    .lookAt(new Vector3f(0,300,400),new Vector3f(0,10,0),new Vector3f(0,1,0))
+                    .lookAt(new Vector3f(0,400,600),new Vector3f(0,0,0),new Vector3f(0,1,0))
                     .mul(trackballTransform);
         } else {
             modelView.peek()
-                    .mul(new Matrix4f(scenegraph.getAnimationTransform().mul(scenegraph.getTransform())).invert());
+//                    .rotate(45, 0.0f, 0.0f, 1.0f)
+                    .rotate( (float) Math.toRadians(90), 0.0f, 1.0f, 0.0f)
+                    .translate(0, -100, -125)
+
+                    .mul(new Matrix4f(scenegraph.getAnimationTransform()).invert())
+            ;
         }
 
 

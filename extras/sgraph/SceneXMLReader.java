@@ -21,6 +21,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Stack;
 import java.util.TreeMap;
+import java.util.jar.Pack200;
 
 
 /**
@@ -174,6 +175,8 @@ class MyHandler<K extends IVertexData> extends DefaultHandler {
             objectname = attributes.getValue(i);
           } else if (attributes.getQName(i).equals("texture")) {
             textureName = attributes.getValue(i);
+          } else {
+            textureName = "white";
           }
         }
         if (objectname.length() > 0) {

@@ -35,7 +35,7 @@ public class Bird {
     }
 
     public INode getBirdNode() {
-        return beak;
+        return bird;
     }
 
     /**
