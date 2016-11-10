@@ -43,6 +43,10 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
      */
     private Bird birdOne, birdTwo;
 
+    /**
+     * Bee scene graph model
+     */
+    private Bee bee;
 
     public Scenegraph()
     {
@@ -96,6 +100,7 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
         birdOne = new Bird(nodes, "1");
         birdTwo = new Bird(nodes, "2");
 
+        bee = new Bee(nodes, "3");
     }
 
     /**
@@ -123,6 +128,8 @@ public class Scenegraph<VertexType extends IVertexData> implements IScenegraph<V
 
         birdOne.animate(time);
         birdTwo.animate(time);
+
+        bee.animate(time);
 
     }
 

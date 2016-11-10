@@ -2,15 +2,16 @@ package sgraph;
 
 import org.joml.Matrix4f;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by yuliazileeva on 10/24/16.
  */
-public class Bird {
+public class Bee {
 
     HashMap<String, INode> nodes;
-    INode bird, rightwing, leftwing, rightulna, leftulna, beak;
+    INode bee, rightwing, leftwing;
     Integer sign;
 
     /**
@@ -19,23 +20,16 @@ public class Bird {
      * @param map nodes
      * @param order bird order
      */
-    public Bird(Map<String,INode> map, String order) {
+    public Bee(Map<String,INode> map, String order) {
 
         nodes = (HashMap<String, INode>) map;
         rightwing = nodes.get(order + "-rightwing");
         leftwing = nodes.get(order + "-leftwing");
-        bird = nodes.get(order + "-bird");
-        rightulna = nodes.get(order + "-rightlowerarm");
-        leftulna = nodes.get(order + "-leftlowerarm");
-        beak = nodes.get(order + "-beak");
+        bee = nodes.get(order + "-bee");
 
         if (Integer.parseInt(order) == 1) sign = 1;
         else sign = -1;
 
-    }
-
-    public INode getBirdNode() {
-        return beak;
     }
 
     /**
@@ -54,11 +48,10 @@ public class Bird {
      * @param time
      */
     private void animateModel(float time) {
-        bird.setAnimationTransform(
+        bee.setAnimationTransform(
                 new Matrix4f()
-                        .rotate((float) Math.toRadians(sign * 20), 0, 0, 1)
                         .rotate(0.01f * time, 0, 1, 0)
-                        .translate(0, 0, sign * 350)
+                        .translate(0, (float) (100 * Math.sin(time * 0.05)) + 400, sign * 250)
                         .rotate(sign * 90, 0, 1, 0)
         );
     }
@@ -69,31 +62,42 @@ public class Bird {
      * @param time
      */
     private void animateWings(float time) {
-        Float wingsTime = (2 * time);
+        Float wingsTime = time;
         Float angle = (float) Math.toRadians(wingsTime);
         Float elbowAngle = (float) Math.toRadians(-wingsTime);
 
-        angle = (float) (0.5 * Math.sin (0.1 * wingsTime));
-        elbowAngle = (float) (0.3 * Math.sin (0.1 * wingsTime));
+//        if (angle > (float) Math.toRadians(180)) {
+//            angle = (float) Math.toRadians(-wingsTime);
+//            elbowAngle = (float) Math.toRadians(0.02 * wingsTime);
+//        } else if (angle < (float) Math.toRadians(180)) {
+//            angle = (float) Math.toRadians(wingsTime);
+//            elbowAngle = (float) Math.toRadians(-0.2 * wingsTime);
+//        }
 
-        animateWing(rightwing, rightulna, angle, elbowAngle);
+        angle = (float) (0.5 * Math.sin(0.4 * wingsTime));
 
-        angle = (float) (0.5 * Math.sin (0.1 * -wingsTime));
-        elbowAngle = (float) (0.3 * Math.sin (0.1 * -wingsTime));
+        animateWing(rightwing, angle);
 
-        animateWing(leftwing, leftulna, angle, elbowAngle);
+//        if (angle < (float) Math.toRadians(-180)) {
+//            angle = (float) Math.toRadians(wingsTime);
+//            elbowAngle = (float) Math.toRadians(-0.02 * wingsTime);
+//        } else if (angle >= (float) Math.toRadians(-180)) {
+//            angle = (float) Math.toRadians(-wingsTime);
+//            elbowAngle = (float) Math.toRadians(0.2 * wingsTime);
+//        }
+
+        angle = (float) (0.5 * Math.sin(0.4 * -wingsTime));
+
+        animateWing(leftwing, angle);
     }
 
     /**
      * Animates wing and ulna
      * @param wing
-     * @param ulna
      * @param angle rotation angle for wing
-     * @param elbowAngle rotation angle for ulna
      */
-    private void animateWing(INode wing, INode ulna, float angle, float elbowAngle) {
-        wing.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));
-        ulna.setAnimationTransform(new Matrix4f().rotate(elbowAngle, 0, 0, 1));
+    private void animateWing(INode wing, float angle) {
+        wing.setAnimationTransform(new Matrix4f().rotate(angle, 0, 0, 1));;
     }
 
 }
