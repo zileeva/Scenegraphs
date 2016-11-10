@@ -15,7 +15,7 @@
 
     <transform name="bird">
         <set>
-            <scale>50 50 50</scale>
+            <scale>100 100 100</scale>
         </set>
         <group name="unit-height-bird">
             <transform>
@@ -26,7 +26,7 @@
                     <group name="birdHead">
                         <transform name="birdHeadTrans">
                             <set>
-                                <translate>0 35 40</translate>
+                                <translate>0 30 35</translate>
                             </set>
                             <group name="head">
                                 <transform name="headTrans">
@@ -35,13 +35,16 @@
                                     </set>
                                     <object instanceof="head">
                                         <material>
-                                            <color>1 1 1</color>
+                                            <ambient>1 1 1</ambient>
+                                            <diffuse> 0.8 0.8 0.8</diffuse>
+                                            <specular> 0.8 0.8 0.8</specular>
+                                            <shininess> 100 </shininess>
                                         </material>
                                     </object>
                                 </transform>
                                 <transform>
                                     <set>
-                                        <translate>-10 10 8</translate>
+                                        <translate>-15 10 10</translate>
                                     </set>
                                     <transform name="leftEye">
                                         <set>
@@ -49,14 +52,17 @@
                                         </set>
                                         <object instanceof="eye">
                                             <material>
-                                                <color>0.2 0.2 0.2</color>
+                                                <ambient> 0.0 0.0 0.0 </ambient>
+                                                <diffuse> 0.8 0.8 0.8</diffuse>
+                                                <specular> 0.8 0.8 0.8</specular>
+                                                <shininess>500</shininess>
                                             </material>
                                         </object>
                                     </transform>
                                 </transform>
                                 <transform>
                                     <set>
-                                        <translate>10 10 8</translate>
+                                        <translate>15 10 10</translate>
                                     </set>
                                     <transform name="rightEye">
                                         <set>
@@ -64,7 +70,10 @@
                                         </set>
                                         <object instanceof="eye">
                                             <material>
-                                                <color>0.2 0.2 0.2</color>
+                                                <ambient> 0.0 0.0 0.0 </ambient>
+                                                <diffuse> 0.8 0.8 0.8</diffuse>
+                                                <specular> 0.8 0.8 0.8</specular>
+                                                <shininess>500</shininess>
                                             </material>
                                         </object>
                                     </transform>
@@ -79,7 +88,10 @@
                                         </set>
                                         <object instanceof="beak">
                                             <material>
-                                                <color>1 0.5 0</color>
+                                                <ambient> 1 0.5 0.0 </ambient>
+                                                <diffuse> 0.8 0.8 0.8</diffuse>
+                                                <specular> 0.8 0.8 0.8</specular>
+                                                <shininess> 100 </shininess>
                                             </material>
                                         </object>
                                     </transform>
@@ -96,7 +108,10 @@
                                         </set>
                                         <object instanceof="feather">
                                             <material>
-                                                <color>1 1 1</color>
+                                                <ambient> 1.0 1.0 1.0 </ambient>
+                                                <diffuse> 0.8 0.8 0.8</diffuse>
+                                                <specular> 0.8 0.8 0.8</specular>
+                                                <shininess> 100 </shininess>
                                             </material>
                                         </object>
                                     </transform>
@@ -112,7 +127,10 @@
                                         </set>
                                         <object instanceof="feather">
                                             <material>
-                                                <color>1 1 1</color>
+                                                <ambient> 1.0 1.0 1.0 </ambient>
+                                                <diffuse> 0.8 0.8 0.8</diffuse>
+                                                <specular> 0.8 0.8 0.8</specular>
+                                                <shininess> 100 </shininess>
                                             </material>
                                         </object>
                                     </transform>
@@ -129,7 +147,10 @@
                                         </set>
                                         <object instanceof="feather">
                                             <material>
-                                                <color>1 1 1</color>
+                                                <ambient> 1.0 1.0 1.0 </ambient>
+                                                <diffuse> 0.8 0.8 0.8</diffuse>
+                                                <specular> 0.8 0.8 0.8</specular>
+                                                <shininess> 100 </shininess>
                                             </material>
                                         </object>
                                     </transform>
@@ -151,7 +172,10 @@
                                     </set>
                                     <object instanceof="body">
                                         <material>
-                                            <color>1 1 1</color>
+                                            <ambient> 1.0 1.0 1.0 </ambient>
+                                            <diffuse> 0.8 0.8 0.8</diffuse>
+                                            <specular> 0.8 0.8 0.8</specular>
+                                            <shininess> 100 </shininess>
                                         </material>
                                     </object>
                                 </transform>
@@ -163,7 +187,10 @@
                                     </set>
                                     <object instanceof="tailFeather">
                                         <material>
-                                            <color>1 1 1</color>
+                                            <ambient> 1.0 1.0 1.0 </ambient>
+                                            <diffuse> 0.8 0.8 0.8</diffuse>
+                                            <specular> 0.8 0.8 0.8</specular>
+                                            <shininess> 100 </shininess>
                                         </material>
                                     </object>
                                 </transform>
@@ -175,7 +202,10 @@
                                     </set>
                                     <object instanceof="tailFeather">
                                         <material>
-                                            <color>1 1 1</color>
+                                            <ambient> 1.0 1.0 1.0 </ambient>
+                                            <diffuse> 0.8 0.8 0.8</diffuse>
+                                            <specular> 0.8 0.8 0.8</specular>
+                                            <shininess> 100 </shininess>
                                         </material>
                                     </object>
                                 </transform>
@@ -187,7 +217,10 @@
                                     </set>
                                     <object instanceof="tailFeather">
                                         <material>
-                                            <color>1 1 1</color>
+                                            <ambient> 1.0 1.0 1.0 </ambient>
+                                            <diffuse> 0.8 0.8 0.8</diffuse>
+                                            <specular> 0.8 0.8 0.8</specular>
+                                            <shininess> 100 </shininess>
                                         </material>
                                     </object>
                                 </transform>
@@ -203,7 +236,10 @@
                                             </set>
                                             <object instanceof="leg">
                                                 <material>
-                                                    <color>1 1 0</color>
+                                                    <ambient> 1.0 1.0 0.0 </ambient>
+                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                    <specular> 0.8 0.8 0.8</specular>
+                                                    <shininess> 100 </shininess>
                                                 </material>
                                             </object>
                                         </transform>
@@ -215,7 +251,10 @@
                                             </set>
                                             <object instanceof="toe">
                                                 <material>
-                                                    <color>1 1 0</color>
+                                                    <ambient> 1.0 1.0 0.0 </ambient>
+                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                    <specular> 0.8 0.8 0.8</specular>
+                                                    <shininess> 100 </shininess>
                                                 </material>
                                             </object>
                                         </transform>
@@ -227,7 +266,10 @@
                                             </set>
                                             <object instanceof="toe">
                                                 <material>
-                                                    <color>1 1 0</color>
+                                                    <ambient> 1.0 1.0 0.0 </ambient>
+                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                    <specular> 0.8 0.8 0.8</specular>
+                                                    <shininess> 100 </shininess>
                                                 </material>
                                             </object>
                                         </transform>
@@ -239,7 +281,10 @@
                                             </set>
                                             <object instanceof="toe">
                                                 <material>
-                                                    <color>1 1 0</color>
+                                                    <ambient> 1.0 1.0 0.0 </ambient>
+                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                    <specular> 0.8 0.8 0.8</specular>
+                                                    <shininess> 100 </shininess>
                                                 </material>
                                             </object>
                                         </transform>
@@ -258,7 +303,7 @@
                                     </set>
                                     <transform name="leftwing">
                                         <set>
-                                            <rotate>80 0 0 1</rotate>
+                                            <rotate>0 0 0 1</rotate>
                                         </set>
                                         <group name="lwing">
                                             <transform name="lhumerusjoint">
@@ -267,7 +312,10 @@
                                                 </set>
                                                 <object instanceof="handJoint">
                                                     <material>
-                                                        <color>1 1 1</color>
+                                                        <ambient> 1.0 1.0 1.0 </ambient>
+                                                        <diffuse> 0.8 0.8 0.8</diffuse>
+                                                        <specular> 0.8 0.8 0.8</specular>
+                                                        <shininess> 100 </shininess>
                                                     </material>
                                                 </object>
                                             </transform>
@@ -279,7 +327,10 @@
                                                 </set>
                                                 <object instanceof="humerus">
                                                     <material>
-                                                        <color>1 1 1</color>
+                                                        <ambient> 1.0 1.0 1.0 </ambient>
+                                                        <diffuse> 0.8 0.8 0.8</diffuse>
+                                                        <specular> 0.8 0.8 0.8</specular>
+                                                        <shininess> 100 </shininess>
                                                     </material>
                                                 </object>
                                             </transform>
@@ -297,7 +348,10 @@
                                                             </set>
                                                             <object instanceof="ulnaJoint">
                                                                 <material>
-                                                                    <color>1 1 1</color>
+                                                                    <ambient> 1.0 1.0 1.0 </ambient>
+                                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                                    <specular> 0.8 0.8 0.8</specular>
+                                                                    <shininess> 100 </shininess>
                                                                 </material>
                                                             </object>
                                                         </transform>
@@ -308,7 +362,10 @@
                                                             </set>
                                                             <object instanceof="ulna">
                                                                 <material>
-                                                                    <color>1 1 1</color>
+                                                                    <ambient> 1.0 1.0 1.0 </ambient>
+                                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                                    <specular> 0.8 0.8 0.8</specular>
+                                                                    <shininess> 100 </shininess>
                                                                 </material>
                                                             </object>
                                                         </transform>
@@ -319,7 +376,10 @@
                                                             </set>
                                                             <object instanceof="handJoint">
                                                                 <material>
-                                                                    <color>1 1 1</color>
+                                                                    <ambient> 1.0 1.0 1.0 </ambient>
+                                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                                    <specular> 0.8 0.8 0.8</specular>
+                                                                    <shininess> 100 </shininess>
                                                                 </material>
                                                             </object>
                                                         </transform>
@@ -330,7 +390,10 @@
                                                             </set>
                                                             <object instanceof="hand">
                                                                 <material>
-                                                                    <color>1 1 1</color>
+                                                                    <ambient> 1.0 1.0 1.0 </ambient>
+                                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                                    <specular> 0.8 0.8 0.8</specular>
+                                                                    <shininess> 100 </shininess>
                                                                 </material>
                                                             </object>
                                                         </transform>
@@ -346,7 +409,7 @@
                                     </set>
                                     <transform name="rightwing">
                                         <set>
-                                            <rotate>-80 0 0 1</rotate>
+                                            <rotate>0 0 0 1</rotate>
                                         </set>
                                         <group name="rwing">
                                             <transform name="rhumerusjoint">
@@ -356,7 +419,10 @@
                                                 </set>
                                                 <object instanceof="handJoint">
                                                     <material>
-                                                        <color>1 1 1</color>
+                                                        <ambient> 1.0 1.0 1.0 </ambient>
+                                                        <diffuse> 0.8 0.8 0.8</diffuse>
+                                                        <specular> 0.8 0.8 0.8</specular>
+                                                        <shininess> 100 </shininess>
                                                     </material>
                                                 </object>
                                             </transform>
@@ -368,7 +434,10 @@
                                                 </set>
                                                 <object instanceof="humerus">
                                                     <material>
-                                                        <color>1 1 1</color>
+                                                        <ambient> 1.0 1.0 1.0 </ambient>
+                                                        <diffuse> 0.8 0.8 0.8</diffuse>
+                                                        <specular> 0.8 0.8 0.8</specular>
+                                                        <shininess> 100 </shininess>
                                                     </material>
                                                 </object>
                                             </transform>
@@ -387,7 +456,10 @@
                                                             </set>
                                                             <object instanceof="ulnaJoint">
                                                                 <material>
-                                                                    <color>1 1 1</color>
+                                                                    <ambient> 1.0 1.0 1.0 </ambient>
+                                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                                    <specular> 0.8 0.8 0.8</specular>
+                                                                    <shininess> 100 </shininess>
                                                                 </material>
                                                             </object>
                                                         </transform>
@@ -403,7 +475,10 @@
                                                                 </set>
                                                                 <object instanceof="ulna">
                                                                     <material>
-                                                                        <color>1 1 1</color>
+                                                                        <ambient> 1.0 1.0 1.0 </ambient>
+                                                                        <diffuse> 0.8 0.8 0.8</diffuse>
+                                                                        <specular> 0.8 0.8 0.8</specular>
+                                                                        <shininess> 100 </shininess>
                                                                     </material>
                                                                 </object>
                                                             </transform>
@@ -416,7 +491,10 @@
                                                             </set>
                                                             <object instanceof="handJoint">
                                                                 <material>
-                                                                    <color>1 1 1</color>
+                                                                    <ambient> 1.0 1.0 1.0 </ambient>
+                                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                                    <specular> 0.8 0.8 0.8</specular>
+                                                                    <shininess> 100 </shininess>
                                                                 </material>
                                                             </object>
                                                         </transform>
@@ -431,7 +509,10 @@
                                                                 </set>
                                                                 <object instanceof="hand">
                                                                     <material>
-                                                                        <color>1 1 1</color>
+                                                                        <ambient> 1.0 1.0 1.0 </ambient>
+                                                                        <diffuse> 0.8 0.8 0.8</diffuse>
+                                                                        <specular> 0.8 0.8 0.8</specular>
+                                                                        <shininess> 100 </shininess>
                                                                     </material>
                                                                 </object>
                                                             </transform>
