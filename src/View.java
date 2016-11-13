@@ -23,8 +23,8 @@ public class View {
     private enum TypeOfCamera {GLOBAL,FPS};
     private int WINDOW_WIDTH,WINDOW_HEIGHT;
     private Stack<Matrix4f> modelView;
-    private Matrix4f projection,trackballTransform;
-    private float trackballRadius;
+    private Matrix4f projection,trackballTransform, keyboardTransform;
+    private float trackballRadius, angleOfRotation;
     private Vector2f mousePos;
 
 
@@ -44,8 +44,9 @@ public class View {
         modelView = new Stack<Matrix4f>();
         trackballRadius = 300;
         trackballTransform = new Matrix4f();
+        keyboardTransform = new Matrix4f();
         scenegraph = null;
-
+        angleOfRotation = 1;
         cameraMode = TypeOfCamera.GLOBAL;
     }
 
@@ -108,6 +109,7 @@ public class View {
 
         if (cameraMode == TypeOfCamera.GLOBAL) {
             modelView.peek()
+                    .mul(keyboardTransform)
                     .lookAt(new Vector3f(0,400,600),new Vector3f(0,0,0),new Vector3f(0,1,0))
                     .mul(trackballTransform);
         } else {
@@ -116,10 +118,8 @@ public class View {
                     .rotate( (float) Math.toRadians(90), 0.0f, 1.0f, 0.0f)
                     .translate(0, -100, -125)
 
-                    .mul(new Matrix4f(scenegraph.getAnimationTransform()).invert())
-            ;
+                    .mul(new Matrix4f(scenegraph.getAnimationTransform()).invert());
         }
-
 
         gl.glUniformMatrix4fv(projectionLocation,1,false,projection.get(fb16));
 
@@ -136,6 +136,70 @@ public class View {
 
 
 
+    }
+
+    public void shift(String d) {
+        switch (d) {
+            case "up":
+                keyboardTransform = new Matrix4f()
+                        .translate(0, -angleOfRotation, 0)
+                        .mul(keyboardTransform);
+                break;
+            case "down":
+                keyboardTransform = new Matrix4f()
+                        .translate(0, angleOfRotation, 0)
+                        .mul(keyboardTransform);
+                break;
+            case "left":
+                keyboardTransform = new Matrix4f()
+                        .translate(-angleOfRotation, 0, 0)
+                        .mul(keyboardTransform);
+                break;
+            case "right":
+                keyboardTransform = new Matrix4f()
+                        .translate(angleOfRotation, 0, 0)
+                        .mul(keyboardTransform);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void nod(String d) {
+        switch (d) {
+            case "up":
+                keyboardTransform = new Matrix4f()
+                        .rotate(0.01f * angleOfRotation, 1, 0, 0)
+                        .mul(keyboardTransform);
+                break;
+            case "down":
+                keyboardTransform = new Matrix4f()
+                        .rotate(0.01f * -angleOfRotation, 1, 0, 0)
+                        .mul(keyboardTransform);
+                break;
+            case "left":
+                keyboardTransform = new Matrix4f()
+                        .rotate(0.01f * angleOfRotation, 0, 1, 0)
+                        .mul(keyboardTransform);
+                break;
+            case "right":
+                keyboardTransform = new Matrix4f()
+                        .rotate(0.01f * -angleOfRotation, 0, 1, 0)
+                        .mul(keyboardTransform);
+                break;
+            case "cc":
+                keyboardTransform = new Matrix4f()
+                        .rotate(0.01f * angleOfRotation, 0, 0, 1)
+                        .mul(keyboardTransform);
+                break;
+            case "c":
+                keyboardTransform = new Matrix4f()
+                        .rotate(0.01f * -angleOfRotation, 0, 0, 1)
+                        .mul(keyboardTransform);
+                break;
+            default:
+                break;
+        }
     }
 
     public void setFPS()

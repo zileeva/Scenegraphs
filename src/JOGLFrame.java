@@ -102,12 +102,45 @@ public class JOGLFrame extends JFrame
 
         @Override
         public void keyPressed(KeyEvent e) {
+
+            switch (e.getKeyCode()) {
+                case KeyEvent.VK_W:
+                    view.nod("up");
+                    break;
+                case KeyEvent.VK_S:
+                    view.nod("down");
+                    break;
+                case KeyEvent.VK_A:
+                    view.nod("left");
+                    break;
+                case KeyEvent.VK_D:
+                    view.nod("right");
+                    break;
+                case KeyEvent.VK_Q:
+                    view.nod("cc");
+                    break;
+                case KeyEvent.VK_E:
+                    view.nod("c");
+                    break;
+                case KeyEvent.VK_I:
+                    view.shift("up");
+                    break;
+                case KeyEvent.VK_K:
+                    view.shift("down");
+                    break;
+                case KeyEvent.VK_J:
+                    view.shift("left");
+                    break;
+                case KeyEvent.VK_L:
+                    view.shift("right");
+                    break;
+            }
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
             switch (e.getKeyCode()) {
-                case KeyEvent.VK_O :
+                case KeyEvent.VK_O:
                     view.setFPS();
                     break;
                 case KeyEvent.VK_G:
