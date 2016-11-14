@@ -7,9 +7,15 @@
     <instance name="beak" path="models/cone"></instance>
     <instance name="leg" path="models/leg"></instance>
     <instance name="toe" path="models/toe"></instance>
-    <instance name="wing" path="models/box"></instance>
+    <instance name="birdwing" path="models/box"></instance>
     <instance name="hand" path="models/sphere"></instance>
     <instance name="joint" path="models/cylinder"></instance>
+
+    <image name="bird" path="textures/birdTexture.png" />
+    <image name="smoothBlack" path="textures/beeSmoothTexture.jpg" />
+    <image name="wingCirc" path="textures/wingCircleTexture.png" />
+    <image name="beak" path="textures/beakTexture.png" />
+    <image name="foot" path="textures/birdFeetTexture.png" />
 
     <transform name="bird">
         <set>
@@ -390,7 +396,7 @@
                                                     <translate>-20 0 0</translate>
                                                     <scale>35 3 30</scale>
                                                 </set>
-                                                <object instanceof="wing" texture="wingCirc">
+                                                <object instanceof="birdwing" texture="wingCirc">
                                                     <material>
                                                         <ambient> 0.5 0.5 0.5 </ambient>
                                                         <diffuse> 0.8 0.8 0.8</diffuse>
@@ -427,7 +433,7 @@
                                                                 <translate>-10 0 0</translate>
                                                                 <scale>25 3 30</scale>
                                                             </set>
-                                                            <object instanceof="wing" texture="wingCirc">
+                                                            <object instanceof="birdwing" texture="wingCirc">
                                                                 <material>
                                                                     <ambient> 0.5 0.5 0.5 </ambient>
                                                                     <diffuse> 0.8 0.8 0.8</diffuse>
@@ -501,7 +507,7 @@
                                                     <translate>20 0 0</translate>
                                                     <scale>35 3 30</scale>
                                                 </set>
-                                                <object instanceof="wing" texture="wingCirc">
+                                                <object instanceof="birdwing" texture="wingCirc">
                                                     <material>
                                                         <ambient> 0.5 0.5 0.5 </ambient>
                                                         <diffuse> 0.8 0.8 0.8</diffuse>
@@ -538,7 +544,7 @@
                                                                 <translate>10 0 0</translate>
                                                                 <scale>25 3 30</scale>
                                                             </set>
-                                                            <object instanceof="wing" texture="wingCirc">
+                                                            <object instanceof="birdwing" texture="wingCirc">
                                                                     <material>
                                                                         <ambient> 0.5 0.5 0.5 </ambient>
                                                                         <diffuse> 0.8 0.8 0.8</diffuse>
