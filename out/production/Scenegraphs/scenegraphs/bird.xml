@@ -32,10 +32,10 @@
                                         <scale>15 15 18</scale>
                                     </set>
                                     <light>
-                                        <ambient>0.5 0.5 0.5</ambient>
-                                        <diffuse>0.8 0.8 0.8</diffuse>
-                                        <specular>0.8 0.8 0.8</specular>
-                                        <position>0 20 20 </position>
+                                        <ambient>0.4 0.4 0.4</ambient>
+                                        <diffuse>0.4 0.4 0.4</diffuse>
+                                        <specular>0.4 0.4 0.4</specular>
+                                        <position>0 100 100 </position>
                                     </light>
                                     <object instanceof="head" texture="bird">
                                         <material>
