@@ -4,14 +4,11 @@
     <instance name="ground" path="models/box"></instance>
 
     <image name="white" path="textures/white.png" />
+    <image name="cloud" path="textures/cloudTexture.jpg" />
+    <image name="grass" path="textures/grassTexture.png" />
+
 
     <group>
-        <light>
-            <ambient>0.2 0.2 0.2</ambient>
-            <diffuse>0.5 0.5 0.5</diffuse>
-            <specular>0.5 0.5 0.5</specular>
-            <position>0 500 0</position>
-        </light>
         <transform>
             <set>
             </set>
@@ -31,16 +28,24 @@
             <group name="3" from="scenegraphs/bee.xml">
             </group>
         </transform>
+        <light>
+            <ambient>1 1 1</ambient>
+            <diffuse>0.5 0.5 0.5</diffuse>
+            <specular>0.4 0.4 0.4</specular>
+            <position>0 0 0</position>
+            <spotangle>40</spotangle>
+            <spotdirection>0 0 -1</spotdirection>
+        </light>
         <transform>
             <set>
                 <translate>0 -300 0</translate>
-                <scale>1000 0.5 1000</scale>
+                <scale>1500 0.5 1000</scale>
             </set>
-            <object instanceof="ground">
+            <object instanceof="ground" texture="grass">
                 <material>
-                    <ambient> 0.0 0.2 0.0 </ambient>
+                    <ambient> 0.8 0.8 0.8</ambient>
                     <diffuse> 0.8 0.8 0.8</diffuse>
-                    <specular> 0.8 0.8 0.8</specular>
+                    <specular>0.8 0.8 0.8</specular>
                     <shininess> 100 </shininess>
                 </material>
             </object>
@@ -57,7 +62,7 @@
                 <specular>0.4 0.4 0.4</specular>
                 <position>-200 650 -100</position>
             </light>
-            <object instanceof="cloud">
+            <object instanceof="cloud" texture="cloud">
                 <material>
                     <ambient> 1 1 1 </ambient>
                     <diffuse> 0.8 0.8 0.8</diffuse>
@@ -72,13 +77,13 @@
                 <rotate>90 0 1 0</rotate>
                 <scale>30 30 30</scale>
             </set>
-            <!--<light>
+            <light>
                 <ambient>0.2 0.2 0.2</ambient>
                 <diffuse>0.2 0.2 0.2</diffuse>
                 <specular>0.4 0.4 0.4</specular>
                 <position>200 550 550</position>
-            </light>-->
-            <object instanceof="cloud">
+            </light>
+            <object instanceof="cloud" texture="cloud">
                 <material>
                     <ambient> 1 1 1 </ambient>
                     <diffuse> 0.8 0.8 0.8</diffuse>
