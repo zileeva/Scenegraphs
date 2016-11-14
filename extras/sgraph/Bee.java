@@ -63,28 +63,11 @@ public class Bee {
      */
     private void animateWings(float time) {
         Float wingsTime = time;
-        Float angle = (float) Math.toRadians(wingsTime);
-        Float elbowAngle = (float) Math.toRadians(-wingsTime);
-
-//        if (angle > (float) Math.toRadians(180)) {
-//            angle = (float) Math.toRadians(-wingsTime);
-//            elbowAngle = (float) Math.toRadians(0.02 * wingsTime);
-//        } else if (angle < (float) Math.toRadians(180)) {
-//            angle = (float) Math.toRadians(wingsTime);
-//            elbowAngle = (float) Math.toRadians(-0.2 * wingsTime);
-//        }
+        Float angle;
 
         angle = (float) (0.5 * Math.sin(0.4 * wingsTime));
 
         animateWing(rightwing, angle);
-
-//        if (angle < (float) Math.toRadians(-180)) {
-//            angle = (float) Math.toRadians(wingsTime);
-//            elbowAngle = (float) Math.toRadians(-0.02 * wingsTime);
-//        } else if (angle >= (float) Math.toRadians(-180)) {
-//            angle = (float) Math.toRadians(-wingsTime);
-//            elbowAngle = (float) Math.toRadians(0.2 * wingsTime);
-//        }
 
         angle = (float) (0.5 * Math.sin(0.4 * -wingsTime));
 

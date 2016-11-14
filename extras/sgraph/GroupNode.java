@@ -74,25 +74,15 @@ public class GroupNode extends AbstractNode
     }
 
 
+    /**
+     * Gets all lights of this node and it's children lights in the view coordinate system
+     * @param modelView
+     * @return
+     */
     @Override
     public List<Light> getLights(Stack<Matrix4f> modelView) {
 
-        List<Light> transformLights = new ArrayList<>();
-        for (Light light : this.lights) {
-            Vector4f pos = light.getPosition();
-            Vector4f spotD = light.getSpotDirection();
-            Matrix4f transformation = new Matrix4f(modelView.peek());
-            pos = transformation.transform(pos);
-            spotD = transformation.transform(spotD);
-            Light l = new util.Light();
-            l.setAmbient(light.getAmbient());
-            l.setDiffuse(light.getDiffuse());
-            l.setSpecular(light.getSpecular());
-            l.setSpotDirection(spotD.x, spotD.y, spotD.z);
-            l.setSpotAngle(light.getSpotCutoff());
-            l.setPosition(pos);
-            transformLights.add(l);
-        }
+        List<Light> transformLights = this.getNodeLights(modelView);
 
         for (INode child: children) {
             transformLights.addAll(child.getLights(modelView));

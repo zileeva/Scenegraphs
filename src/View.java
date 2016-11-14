@@ -115,6 +115,7 @@ public class View {
         } else {
             modelView.peek()
 //                    .rotate(45, 0.0f, 0.0f, 1.0f)
+                    .mul(keyboardTransform)
                     .rotate( (float) Math.toRadians(90), 0.0f, 1.0f, 0.0f)
                     .translate(0, -100, -125)
 

@@ -106,6 +106,11 @@ public class TransformNode extends AbstractNode
         this.child.setParent(this);
     }
 
+    /**
+     * Gets all lights of this node and it's child in the view coordinate system
+     * @param modelView
+     * @return list of lights
+     */
     @Override
     public List<Light> getLights(Stack<Matrix4f> modelView) {
 
@@ -113,23 +118,7 @@ public class TransformNode extends AbstractNode
         modelView.peek().mul(animation_transform)
                 .mul(transform);
 
-        List<Light> transformLights = new ArrayList<>();
-        for (Light light : this.lights) {
-            Vector4f pos = light.getPosition();
-            Vector4f spotD = light.getSpotDirection();
-            Matrix4f transformation = new Matrix4f(modelView.peek());
-            pos = transformation.transform(pos);
-            spotD = transformation.transform(spotD);
-            Light l = new util.Light();
-            l.setAmbient(light.getAmbient());
-            l.setDiffuse(light.getDiffuse());
-            l.setSpecular(light.getSpecular());
-            l.setSpotDirection(spotD.x, spotD.y, spotD.z);
-            l.setPosition(pos);
-            transformLights.add(l);
-
-        }
-
+        List<Light> transformLights = this.getNodeLights(modelView);
         transformLights.addAll(child.getLights(modelView));
 
         modelView.pop();

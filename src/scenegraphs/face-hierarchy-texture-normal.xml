@@ -10,7 +10,7 @@
         <ambient>0.8 0.8 0.8</ambient>
         <diffuse>0.8 0.8 0.8</diffuse>
         <specular>0.8 0.8 0.8</specular>
-        <position>0 100 0 </position>
+        <position>0 -10 0 </position>
         <spotangle>25</spotangle>
         <spotdirection>0 -1 0 </spotdirection>
     </light>

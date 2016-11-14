@@ -84,7 +84,7 @@ float calcSpotlight(LightProperties light, vec3 lightVector) {
     vec3 l = normalize(lightVector);
 	vec3 d = normalize(light.spotDirection.xyz);
 	float lDOTd = dot(-l, d);
-	//if(light.spotAngle >= 180) 	return 1.0;
+	if(light.spotAngle < -0.9) return 1.0;
 	if(lDOTd < light.spotAngle) return 0.0;
 	return 1.0;
 }
