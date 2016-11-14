@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bdf3847-d9af-4f72-b394-adbbf8c8ec58" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/View.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/View.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/AbstractNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/AbstractNode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/Bee.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/Bee.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GL3ScenegraphRenderer.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GL3ScenegraphRenderer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GroupNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/GroupNode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/LeafNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/LeafNode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/TransformNode.class" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/sgraph/TransformNode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphs/bee.xml" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphs/bee.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphs/bird.xml" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphs/bird.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphs/face-hierarchy-texture-normal.xml" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/scenegraphs/face-hierarchy-texture-normal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Scenegraphs/shaders/phong-multiple.frag" afterPath="$PROJECT_DIR$/out/production/Scenegraphs/shaders/phong-multiple.frag" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View.java" afterPath="$PROJECT_DIR$/src/View.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenegraphs/bee.xml" afterPath="$PROJECT_DIR$/src/scenegraphs/bee.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenegraphs/bird.xml" afterPath="$PROJECT_DIR$/src/scenegraphs/bird.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scenegraphs/face-hierarchy-texture-normal.xml" afterPath="$PROJECT_DIR$/src/scenegraphs/face-hierarchy-texture-normal.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shaders/phong-multiple.frag" afterPath="$PROJECT_DIR$/src/shaders/phong-multiple.frag" />
     </list>
     <ignored path="Scenegraphs.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="112" column="50" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
+              <caret line="112" column="63" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
               <folding>
                 <element signature="e#6809#6810#0" expanded="true" />
                 <element signature="e#6857#6858#0" expanded="true" />
@@ -107,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bird.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bird.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scenegraphs/bird.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="25" selection-end-column="71" />
+            <state relative-caret-position="-8248">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -145,8 +130,8 @@
         <option value="$PROJECT_DIR$/../extras/sgraph/Bird.java" />
         <option value="$PROJECT_DIR$/../extras/sgraph/Scenegraph.java" />
         <option value="$PROJECT_DIR$/src/JOGLFrame.java" />
-        <option value="$PROJECT_DIR$/src/scenegraphs/bird.xml" />
         <option value="$PROJECT_DIR$/src/View.java" />
+        <option value="$PROJECT_DIR$/src/scenegraphs/bird.xml" />
       </list>
     </option>
   </component>
@@ -899,14 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenegraphs/bird.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="25" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scenegraphs/two-birds-bee.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -934,11 +911,19 @@
     <entry file="file://$PROJECT_DIR$/src/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="112" column="50" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
+          <caret line="112" column="63" selection-start-line="112" selection-start-column="63" selection-end-line="112" selection-end-column="63" />
           <folding>
             <element signature="e#6809#6810#0" expanded="true" />
             <element signature="e#6857#6858#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenegraphs/bird.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8248">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
