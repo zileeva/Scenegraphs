@@ -7,12 +7,6 @@
     <instance name="antenna" path="models/bee-antenna"></instance>
     <instance name="wing" path="models/sphere"></instance>
 
-    <image name="beeWing" path="textures/BeeWingTexture4.jpg" />
-    <image name="beeBody" path="textures/beeBodyTexture.png" />
-    <image name="beeFur" path="textures/beeHeadTexture.png" />
-    <image name="beeSmooth" path="textures/beeSmoothTexture.jpg" />
-
-
     <light>
         <ambient>0.8 0.8 0.8</ambient>
         <diffuse>0.8 0.8 0.8</diffuse>

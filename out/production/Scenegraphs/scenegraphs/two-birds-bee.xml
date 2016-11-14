@@ -6,6 +6,15 @@
     <image name="white" path="textures/white.png" />
     <image name="cloud" path="textures/cloudTexture.jpg" />
     <image name="grass" path="textures/grassTexture.png" />
+    <image name="bird" path="textures/birdTexture.png" />
+    <image name="smoothBlack" path="textures/beeSmoothTexture.jpg" />
+    <image name="wingCirc" path="textures/wingCircleTexture.png" />
+    <image name="beak" path="textures/beakTexture.png" />
+    <image name="foot" path="textures/birdFeetTexture.png" />
+    <image name="beeWing" path="textures/BeeWingTexture4.jpg" />
+    <image name="beeBody" path="textures/beeBodyTexture.png" />
+    <image name="beeFur" path="textures/beeHeadTexture.png" />
+    <image name="beeSmooth" path="textures/beeSmoothTexture.jpg" />
 
 
     <group>
