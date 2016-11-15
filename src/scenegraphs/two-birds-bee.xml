@@ -5,7 +5,7 @@
 
     <image name="white" path="textures/white.png" />
     <image name="cloud" path="textures/cloudTexture.jpg" />
-    <image name="grass" path="textures/grassTexture.png" />
+    <image name="grass" path="textures/grassTextureDense.png" />
     <image name="bird" path="textures/birdTexture.png" />
     <image name="smoothBlack" path="textures/beeSmoothTexture.jpg" />
     <image name="wingCirc" path="textures/wingCircleTexture.png" />

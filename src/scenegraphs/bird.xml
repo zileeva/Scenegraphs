@@ -5,8 +5,8 @@
     <instance name="body" path="models/sphere"></instance>
     <instance name="head" path="models/sphere"></instance>
     <instance name="beak" path="models/cone"></instance>
-    <instance name="leg" path="models/leg"></instance>
-    <instance name="toe" path="models/toe"></instance>
+    <instance name="leg" path="models/cylinder"></instance>
+    <instance name="toe" path="models/cylinder"></instance>
     <instance name="birdwing" path="models/box"></instance>
     <instance name="hand" path="models/sphere"></instance>
     <instance name="joint" path="models/cylinder"></instance>
@@ -242,12 +242,26 @@
                                     <group name="leg">
                                         <transform name="upperLeg">
                                             <set>
-                                                <translate>0 0 0</translate>
-                                                <scale>20 20 20</scale>
+                                                <translate>0 -10 0</translate>
+                                                <scale>3 20 3</scale>
                                             </set>
                                             <object instanceof="leg" texture="foot">
                                                 <material>
-                                                    <ambient> 1.0 1.0 0.0 </ambient>
+                                                    <ambient> 0.8 0.8 0.8</ambient>
+                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                    <specular> 0.8 0.8 0.8</specular>
+                                                    <shininess> 100 </shininess>
+                                                </material>
+                                            </object>
+                                        </transform>
+                                        <transform name="footjoint">
+                                            <set>
+                                                <translate>0 -10 0</translate>
+                                                <scale>4 4 4</scale>
+                                            </set>
+                                            <object instanceof="hand" texture="foot">
+                                                <material>
+                                                    <ambient> 0.8 0.8 0.8</ambient>
                                                     <diffuse> 0.8 0.8 0.8</diffuse>
                                                     <specular> 0.8 0.8 0.8</specular>
                                                     <shininess> 100 </shininess>
@@ -256,13 +270,14 @@
                                         </transform>
                                         <transform name="leftToe">
                                             <set>
-                                                <translate>-5 -8 10</translate>
+                                                <translate>-3 -10 0</translate>
                                                 <rotate>-25 0 1 0</rotate>
-                                                <scale>20 20 20</scale>
+                                                <rotate>100 1 0 0</rotate>
+                                                <scale>2 15 2</scale>
                                             </set>
                                             <object instanceof="toe" texture="foot">
                                                 <material>
-                                                    <ambient> 1.0 1.0 0.0 </ambient>
+                                                    <ambient> 0.8 0.8 0.8</ambient>
                                                     <diffuse> 0.8 0.8 0.8</diffuse>
                                                     <specular> 0.8 0.8 0.8</specular>
                                                     <shininess> 100 </shininess>
@@ -271,13 +286,14 @@
                                         </transform>
                                         <transform name="middleToe">
                                             <set>
-                                                <translate>0 -8 10</translate>
+                                                <translate>0 -10 0</translate>
                                                 <rotate>0 0 1 0</rotate>
-                                                <scale>20 20 20</scale>
+                                                <rotate>100 1 0 0</rotate>
+                                                <scale>2 15 2</scale>
                                             </set>
                                             <object instanceof="toe" texture="foot">
                                                 <material>
-                                                    <ambient> 1.0 1.0 0.0 </ambient>
+                                                    <ambient> 0.8 0.8 0.8</ambient>
                                                     <diffuse> 0.8 0.8 0.8</diffuse>
                                                     <specular> 0.8 0.8 0.8</specular>
                                                     <shininess> 100 </shininess>
@@ -286,13 +302,14 @@
                                         </transform>
                                         <transform name="rightToe">
                                             <set>
-                                                <translate>5 -8 10</translate>
+                                                <translate>3 -10 0</translate>
                                                 <rotate>25 0 1 0</rotate>
-                                                <scale>20 20 20</scale>
+                                                <rotate>100 1 0 0</rotate>
+                                                <scale>2 15 2</scale>
                                             </set>
                                             <object instanceof="toe" texture="foot">
                                                 <material>
-                                                    <ambient> 1.0 1.0 0.0 </ambient>
+                                                    <ambient> 0.8 0.8 0.8</ambient>
                                                     <diffuse> 0.8 0.8 0.8</diffuse>
                                                     <specular> 0.8 0.8 0.8</specular>
                                                     <shininess> 100 </shininess>
@@ -308,12 +325,26 @@
                                     <group name="leg">
                                         <transform name="upperLeg">
                                             <set>
-                                                <translate>0 0 0</translate>
-                                                <scale>20 20 20</scale>
+                                                <translate>0 -10 0</translate>
+                                                <scale>3 20 3</scale>
                                             </set>
                                             <object instanceof="leg" texture="foot">
                                                 <material>
-                                                    <ambient> 1.0 1.0 0.0 </ambient>
+                                                    <ambient> 0.8 0.8 0.8</ambient>
+                                                    <diffuse> 0.8 0.8 0.8</diffuse>
+                                                    <specular> 0.8 0.8 0.8</specular>
+                                                    <shininess> 100 </shininess>
+                                                </material>
+                                            </object>
+                                        </transform>
+                                        <transform name="footjoint">
+                                            <set>
+                                                <translate>0 -10 0</translate>
+                                                <scale>4 4 4</scale>
+                                            </set>
+                                            <object instanceof="hand" texture="foot">
+                                                <material>
+                                                    <ambient> 0.8 0.8 0.8</ambient>
                                                     <diffuse> 0.8 0.8 0.8</diffuse>
                                                     <specular> 0.8 0.8 0.8</specular>
                                                     <shininess> 100 </shininess>
@@ -322,13 +353,14 @@
                                         </transform>
                                         <transform name="leftToe">
                                             <set>
-                                                <translate>-5 -8 10</translate>
+                                                <translate>-3 -10 0</translate>
                                                 <rotate>-25 0 1 0</rotate>
-                                                <scale>20 20 20</scale>
+                                                <rotate>100 1 0 0</rotate>
+                                                <scale>2 15 2</scale>
                                             </set>
                                             <object instanceof="toe" texture="foot">
                                                 <material>
-                                                    <ambient> 1.0 1.0 0.0 </ambient>
+                                                    <ambient> 0.8 0.8 0.8</ambient>
                                                     <diffuse> 0.8 0.8 0.8</diffuse>
                                                     <specular> 0.8 0.8 0.8</specular>
                                                     <shininess> 100 </shininess>
@@ -337,13 +369,14 @@
                                         </transform>
                                         <transform name="middleToe">
                                             <set>
-                                                <translate>0 -8 10</translate>
+                                                <translate>0 -10 0</translate>
                                                 <rotate>0 0 1 0</rotate>
-                                                <scale>20 20 20</scale>
+                                                <rotate>100 1 0 0</rotate>
+                                                <scale>2 15 2</scale>
                                             </set>
                                             <object instanceof="toe" texture="foot">
                                                 <material>
-                                                    <ambient> 1.0 1.0 0.0 </ambient>
+                                                    <ambient> 0.8 0.8 0.8</ambient>
                                                     <diffuse> 0.8 0.8 0.8</diffuse>
                                                     <specular> 0.8 0.8 0.8</specular>
                                                     <shininess> 100 </shininess>
@@ -352,13 +385,14 @@
                                         </transform>
                                         <transform name="rightToe">
                                             <set>
-                                                <translate>5 -8 10</translate>
+                                                <translate>3 -10 0</translate>
                                                 <rotate>25 0 1 0</rotate>
-                                                <scale>20 20 20</scale>
+                                                <rotate>100 1 0 0</rotate>
+                                                <scale>2 15 2</scale>
                                             </set>
                                             <object instanceof="toe" texture="foot">
                                                 <material>
-                                                    <ambient> 1.0 1.0 0.0 </ambient>
+                                                    <ambient> 0.8 0.8 0.8</ambient>
                                                     <diffuse> 0.8 0.8 0.8</diffuse>
                                                     <specular> 0.8 0.8 0.8</specular>
                                                     <shininess> 100 </shininess>
