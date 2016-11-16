@@ -3,7 +3,7 @@
     <instance name="body" path="models/sphere"></instance>
     <instance name="head" path="models/sphere"></instance>
     <instance name="tail" path="models/cone"></instance>
-    <instance name="leg" path="models/bee-leg"></instance>
+    <instance name="leg" path="models/cylinder"></instance>
     <instance name="antenna" path="models/bee-antenna"></instance>
     <instance name="wing" path="models/sphere"></instance>
 
@@ -20,12 +20,6 @@
     <!--<image name="beeFur" path="textures/beeHeadTexture.png" />-->
     <!--<image name="beeSmooth" path="textures/beeSmoothTexture.jpg" />-->
 
-    <!--<light>-->
-        <!--<ambient>0.8 0.8 0.8</ambient>-->
-        <!--<diffuse>0.8 0.8 0.8</diffuse>-->
-        <!--<specular>0.8 0.8 0.8</specular>-->
-        <!--<position>0 100 0 </position>-->
-    <!--</light>-->
     <transform name="bee">
         <set>
             <rotate>-30 1 0 0</rotate>
@@ -50,12 +44,6 @@
                             <set>
                                 <translate>0 5 45</translate>
                             </set>
-                            <!--<light>-->
-                                <!--<ambient>0.8 0.8 0.8</ambient>-->
-                                <!--<diffuse>0.8 0.8 0.8</diffuse>-->
-                                <!--<specular>0.8 0.8 0.8</specular>-->
-                                <!--<position>0 40 40 </position>-->
-                            <!--</light>-->
                             <group name="head">
                                 <transform name="headTrans">
                                     <set>
@@ -171,11 +159,11 @@
                                     <set>
                                         <translate>-12 -25 0</translate>
                                     </set>
-                                    <group name="lleg">
-                                        <transform name="llegFront">
+                                    <group name="leg">
+                                        <transform name="legFront">
                                             <set>
-                                                <translate>0 3 -20</translate>
-                                                <scale>20 20 20</scale>
+                                                <translate>0 -8 -20</translate>
+                                                <scale>2 15 2</scale>
                                             </set>
                                             <object instanceof="leg" texture="beeFur">
                                                 <material>
@@ -186,10 +174,10 @@
                                                 </material>
                                             </object>
                                         </transform>
-                                        <transform name="llegMiddle">
+                                        <transform name="legMiddle">
                                             <set>
-                                                <translate>0 0 0</translate>
-                                                <scale>20 20 20</scale>
+                                                <translate>0 -10 0</translate>
+                                                <scale>2 15 2</scale>
                                             </set>
                                             <object instanceof="leg" texture="beeFur">
                                                 <material>
@@ -200,10 +188,10 @@
                                                 </material>
                                             </object>
                                         </transform>
-                                        <transform name="llegBack">
+                                        <transform name="legBack">
                                             <set>
-                                                <translate>0 5 20</translate>
-                                                <scale>20 20 20</scale>
+                                                <translate>0 -8 20</translate>
+                                                <scale>2 15 2</scale>
                                             </set>
                                             <object instanceof="leg" texture="beeFur">
                                                 <material>
@@ -220,50 +208,7 @@
                                     <set>
                                         <translate>12 -25 0</translate>
                                     </set>
-                                    <group name="rleg">
-                                        <transform name="rlegFront">
-                                            <set>
-                                                <translate>0 3 -20</translate>
-                                                <scale>20 20 20</scale>
-                                            </set>
-                                            <object instanceof="leg" texture="beeFur">
-                                                <material>
-                                                    <ambient> 0.0 0.0 0.0 </ambient>
-                                                    <diffuse> 0.8 0.8 0.8</diffuse>
-                                                    <specular> 0.8 0.8 0.8</specular>
-                                                    <shininess> 50 </shininess>
-                                                </material>
-                                            </object>
-                                        </transform>
-                                        <transform name="rlegMiddle">
-                                            <set>
-                                                <translate>0 0 0</translate>
-                                                <scale>20 20 20</scale>
-                                            </set>
-                                            <object instanceof="leg" texture="beeFur">
-                                                <material>
-                                                    <ambient> 0.0 0.0 0.0 </ambient>
-                                                    <diffuse> 0.8 0.8 0.8</diffuse>
-                                                    <specular> 0.8 0.8 0.8</specular>
-                                                    <shininess> 50 </shininess>
-                                                </material>
-                                            </object>
-                                        </transform>
-                                        <transform name="rlegBack">
-                                            <set>
-                                                <translate>0 5 20</translate>
-                                                <scale>20 20 20</scale>
-                                            </set>
-                                            <object instanceof="leg" texture="beeFur">
-                                                <material>
-                                                    <ambient> 0.0 0.0 0.0 </ambient>
-                                                    <diffuse> 0.8 0.8 0.8</diffuse>
-                                                    <specular> 0.8 0.8 0.8</specular>
-                                                    <shininess> 50 </shininess>
-                                                </material>
-                                            </object>
-                                        </transform>
-                                    </group>
+                                    <group copyof="leg"></group>
                                 </transform>
                                 <transform name="leftwing">
                                     <set>

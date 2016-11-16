@@ -143,22 +143,22 @@ public class View {
         switch (d) {
             case "up":
                 keyboardTransform = new Matrix4f()
-                        .translate(0, -angleOfRotation, 0)
+                        .translate(0, 2f * -angleOfRotation, 0)
                         .mul(keyboardTransform);
                 break;
             case "down":
                 keyboardTransform = new Matrix4f()
-                        .translate(0, angleOfRotation, 0)
+                        .translate(0, 2f * angleOfRotation, 0)
                         .mul(keyboardTransform);
                 break;
             case "left":
                 keyboardTransform = new Matrix4f()
-                        .translate(-angleOfRotation, 0, 0)
+                        .translate(2f * angleOfRotation, 0, 0)
                         .mul(keyboardTransform);
                 break;
             case "right":
                 keyboardTransform = new Matrix4f()
-                        .translate(angleOfRotation, 0, 0)
+                        .translate(2f * -angleOfRotation, 0, 0)
                         .mul(keyboardTransform);
                 break;
             default:
@@ -170,32 +170,32 @@ public class View {
         switch (d) {
             case "up":
                 keyboardTransform = new Matrix4f()
-                        .rotate(0.01f * angleOfRotation, 1, 0, 0)
+                        .rotate(0.05f * -angleOfRotation, 1, 0, 0)
                         .mul(keyboardTransform);
                 break;
             case "down":
                 keyboardTransform = new Matrix4f()
-                        .rotate(0.01f * -angleOfRotation, 1, 0, 0)
+                        .rotate(0.05f * angleOfRotation, 1, 0, 0)
                         .mul(keyboardTransform);
                 break;
             case "left":
                 keyboardTransform = new Matrix4f()
-                        .rotate(0.01f * angleOfRotation, 0, 1, 0)
+                        .rotate(0.05f * angleOfRotation, 0, 1, 0)
                         .mul(keyboardTransform);
                 break;
             case "right":
                 keyboardTransform = new Matrix4f()
-                        .rotate(0.01f * -angleOfRotation, 0, 1, 0)
+                        .rotate(0.05f * -angleOfRotation, 0, 1, 0)
                         .mul(keyboardTransform);
                 break;
             case "cc":
                 keyboardTransform = new Matrix4f()
-                        .rotate(0.01f * angleOfRotation, 0, 0, 1)
+                        .rotate(0.05f * angleOfRotation, 0, 0, 1)
                         .mul(keyboardTransform);
                 break;
             case "c":
                 keyboardTransform = new Matrix4f()
-                        .rotate(0.01f * -angleOfRotation, 0, 0, 1)
+                        .rotate(0.05f * -angleOfRotation, 0, 0, 1)
                         .mul(keyboardTransform);
                 break;
             default:

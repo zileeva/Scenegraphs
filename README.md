@@ -3,17 +3,32 @@
 Anastasia Korolev
 Yulia Zileeva
 
+
 Completed:
-Part 2A - Y M C A
-    a-humanoid.xml
-    y-humanoid.xml
-    two-y-a-humanoids.xml
+1. Lights
+2. Spot Lights
+3. Texture
+4. Material for scene
+5. More than 2 textures for scene
+6. 1 stationary spotlight for scene
+7. 2 moving lights for scene
+8. 1 moving spotlight for scene
+9. Second animated model - bee
+10. Object - stationary camera
+11. More objects for scene
+12. Keyboard controlled camera
 
-Part 2B - Bird Model
-    bird.xml
-    two-birds.xml
-
-Part 2C - Animation
-
-
-To change scene graph - change file name in JOGLFrame.java line 60
+Keyboard Control:
+O - left eye bird view
+● Nod
+○ W - nod up
+○ S - nod down
+○ A - nod left
+○ D - nod right
+○ Q - nod counter-clockwise
+○ E - nod clockwise
+● Shift
+○ I - shift up
+○ K - shift down
+○ J - shift left
+○ L - shift right

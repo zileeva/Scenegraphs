@@ -73,7 +73,9 @@ void main()
             specular = vec3(0,0,0);
 
         float spotlight = calcSpotlight(light[i], lightVec);
-        if (spotlight > 0.1) fColor = fColor +  vec4(ambient + diffuse + specular, 1.0);
+        if (spotlight > 0.1) fColor = clamp(fColor +  vec4(ambient + diffuse + specular, 1.0), 0, 1);
+        //if (spotlight > 0.1) fColor = min(fColor + vec4(ambient + diffuse + specular, 1.0), 1.0f);
+        //if (spotlight > 0.1) fColor = fColor +  vec4(ambient + diffuse + specular, 1.0);
     }
     fColor = fColor * texture(image,fTexCoord.st);
     //fColor = vec4(fTexCoord.s,fTexCoord.t,0,1);
