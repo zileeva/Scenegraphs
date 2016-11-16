@@ -12,7 +12,7 @@
     <instance name="joint" path="models/cylinder"></instance>
 
     <image name="bird" path="textures/birdTexture.png" />
-    <image name="smoothBlack" path="textures/beeSmoothTexture.jpg" />
+    <image name="smoothBlack" path="textures/beeSmoothTexture.png" />
     <image name="wingCirc" path="textures/wingCircleTexture.png" />
     <image name="beak" path="textures/beakTexture.png" />
     <image name="foot" path="textures/birdFeetTexture.png" />

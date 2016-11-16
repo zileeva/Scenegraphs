@@ -3,6 +3,9 @@
 Anastasia Korolev
 Yulia Zileeva
 
+Problems:
+Issue with lighting on windows vs mac
+No spotlights showing up on windows computer and overall overexposed compared to mac
 
 Completed:
 1. Lights
